@@ -1,0 +1,85 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <div class="title blog">
+        <p>BLOG</p>
+    </div>
+
+    <div class="container">
+        <a
+            href="blog_articles/S邸 10f95b2a7e108015951efa77a683dfc4.html"
+            class="article"
+        >
+            <img
+                src="/images/blog_page/article1.webp"
+                alt="画像の詳細"
+                loading="lazy"
+                alt=""
+            />
+            <h1>2024.7.22</h1>
+            <p>私の家</p>
+        </a>
+        <a href="#" class="article">
+            <img
+                src="/images/blog_page/blog.webp"
+                alt="画像の詳細"
+                loading="lazy"
+                alt=""
+            />
+            <h1>2024.7.15</h1>
+            <p>今週の工事状況</p>
+        </a>
+        <a href="#" class="article">
+            <img
+                src="/images/blog_page/blog.webp"
+                alt="画像の詳細"
+                loading="lazy"
+                alt=""
+            />
+            <h1>2024.7.8</h1>
+            <p>今週の工事状況</p>
+        </a>
+        <a href="#" class="article">
+            <img
+                src="/images/blog_page/blog.webp"
+                alt="画像の詳細"
+                loading="lazy"
+                alt=""
+            />
+            <h1>2024.7.1</h1>
+            <p>今週の工事状況</p>
+        </a>
+    </div>
+
+    <hr />
+</BaseLayout>
+
+<style>
+    .blog {
+        background: url(images/blog_page/blog.webp) no-repeat center center;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 20px;
+        row-gap: 10px;
+        margin: 15%;
+        margin-top: 10%;
+        margin-bottom: 10%;
+    }
+    .article h1 {
+        text-align: left;
+        font-size: 16px;
+    }
+    .article p {
+        text-align: left;
+        font-size: 16px;
+    }
+</style>
+
+<script src="/js/fadein.js" defer></script>

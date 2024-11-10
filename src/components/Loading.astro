@@ -1,0 +1,32 @@
+---
+
+---
+
+<!-- Loading -->
+<div id="loading">
+	<img class="spinner" src="images/loading.webp" alt="" />
+</div>
+
+<style>
+	#loading {
+		transition: all 1s;
+		background-color: #fffefe;
+		position: fixed;
+		z-index: 9999;
+		inset: 0;
+		display: grid;
+		place-items: center;
+	}
+
+	.spinner {
+		width: 50px;
+		height: 50px;
+	}
+
+	.loaded {
+		opacity: 0;
+		visibility: hidden;
+	}
+</style>
+
+<script src="/js/loading.js" defer></script>

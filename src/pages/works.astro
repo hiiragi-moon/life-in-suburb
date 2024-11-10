@@ -1,0 +1,58 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <div class="title works">
+        <p>WORKS</p>
+    </div>
+    <div class="content-part">
+        <div class="container work_con">
+            <a href="#" class="item">
+                <img
+                    src="/images/works_page/Shome.webp"
+                    alt="画像の詳細"
+                    loading="lazy"
+                />
+                <p>S邸</p>
+            </a>
+            <a href="#" class="item">
+                <img
+                    src="/images/works_page/Hhome.webp"
+                    alt="画像の詳細"
+                    loading="lazy"
+                />
+                <p>H邸</p>
+            </a>
+            <a href="#" class="item">
+                <img
+                    src="/images/works_page/Thome.webp"
+                    alt="画像の詳細"
+                    loading="lazy"
+                />
+                <p>T邸</p>
+            </a>
+            <a href="#" class="item">
+                <img
+                    src="/images/works_page/Yhome.webp"
+                    alt="画像の詳細"
+                    loading="lazy"
+                />
+                <p>Y邸</p>
+            </a>
+        </div>
+    </div>
+
+    <hr />
+</BaseLayout>
+
+<style>
+    .works {
+        background: url(/images/works_page/works.webp) no-repeat center center;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+</style>
+
+<script src="/js/fadein.js" defer></script>

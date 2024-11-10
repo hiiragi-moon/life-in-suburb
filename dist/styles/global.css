@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+* {
+	font-family: 'Roboto', 'Noto Sans JP', sans-serif;
+	font-weight: 700;
+}
+
+h1 {
+	font-size: 20px;
+	text-align: center;
+}
+
+p {
+	font-size: 18px;
+	text-align: center;
+	font-weight: 300;
+}
+
+a {
+	color: #000000;
+	text-decoration: none;
+}
+
+a:hover {
+	opacity: 0.6;
+}
+
+img {
+	width: 100%;
+}
+
+.title {
+	height: 640px;
+	margin-bottom: 60px;
+}
+
+.title p {
+	text-align: center;
+	line-height: 640px;
+	font-weight: 500;
+	font-size: 50px;
+	color: #ffffff;
+}
+
+.content-part {
+	margin: 10%;
+}
+
+.slim-content-part {
+	margin: 10% 20% 10% 20%;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	gap: 20px;
+}
+
+.fade-in {
+	opacity: 0;
+	transition: opacity 1s 0.1s ease-in;
+}
+
+.fade-in.show {
+	opacity: 1;
+}

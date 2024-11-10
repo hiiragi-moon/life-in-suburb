@@ -1,0 +1,173 @@
+---
+
+---
+
+<!-- Header -->
+<header class="page-header">
+	<h1><a href="index.html">Life In Suburb</a></h1>
+	<nav>
+		<ul class="header-items">
+			<li>
+				<a href="https://www.youtube.com/">
+					<img
+						class="header-items youtube"
+						src="images/icons/youtube.png"
+						alt="youtube"
+					/>
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://www.instagram.com/_shinmura_?igsh=enFoZ3FzNG9zYXhq"
+				>
+					<img
+						class="header-items instagram"
+						src="/images/icons/instagram.png"
+						alt="instagram"
+					/>
+				</a>
+			</li>
+			<li><a href="contact">CONTACT</a></li>
+			<li>
+				<button class="menu-button header-items" onclick="toggleMenu()">
+					<svg
+						class="menu-icon"
+						height="30"
+						viewBox="0 0 24 24"
+						width="24"
+					>
+						<title>メニューを開く</title>
+						<path
+							clip-rule="evenodd"
+							d="m4.25 8c0-.41421.33579-.75.75-.75h14c.4142 0 .75.33579.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.33579-.75-.75zm0 4c0-.4142.33579-.75.75-.75h14c.4142 0 .75.3358.75.75s-.3358.75-.75.75h-14c-.41421 0-.75-.3358-.75-.75zm.75 3.25c-.41421 0-.75.3358-.75.75s.33579.75.75.75h14c.4142 0 .75-.3358.75-.75s-.3358-.75-.75-.75z"
+							fill-rule="evenodd"></path>
+					</svg>
+				</button>
+			</li>
+		</ul>
+	</nav>
+</header>
+
+<div class="menu-panel">
+	<ul>
+		<li><a href="concept">CONCEPT</a></li>
+		<li><a href="concepthouse">CONCEPT HOUSE</a></li>
+		<li><a href="works">WORKS</a></li>
+		<li><a href="orderflow">ORDER FLOW</a></li>
+		<li><a href="blog">BLOG</a></li>
+		<li><a href="about">ABOUT</a></li>
+		<li><a href="contact">CONTACT</a></li>
+	</ul>
+</div>
+
+<style>
+	hr {
+		height: 1px;
+		border: 0;
+		margin-left: 5%;
+		margin-right: 5%;
+		border-top: 1px solid #4b5564;
+	}
+
+	.page-header {
+		position: fixed;
+		top: 0;
+		height: 60px;
+		width: 100%;
+		/* 横いっぱいに広げる */
+		background: rgba(255, 253, 253, 0.7);
+		padding: 0 3%;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		z-index: 1000;
+		/* 他の要素の上に表示 */
+		border-bottom: 2px solid #575555;
+		white-space: nowrap;
+	}
+
+	.page-header a {
+		font-size: 20px;
+		text-decoration: none;
+	}
+
+	.page-header li {
+		text-align: right;
+		font-size: 1rem;
+		text-decoration: none;
+		line-height: 60px;
+		padding: 0.7rem;
+	}
+
+	.header-items {
+		display: flex;
+		align-items: center;
+		font-size: 1.25rem;
+		list-style: none;
+	}
+
+	.header-items a {
+		font-size: 1rem;
+		text-decoration: none;
+	}
+
+	.youtube {
+		width: 2rem;
+	}
+
+	.instagram {
+		width: 1.5rem;
+	}
+
+	.menu-panel {
+		position: fixed;
+		top: 60px;
+		right: 0;
+		z-index: 10;
+		width: 30vw;
+		text-align: center;
+		background-color: rgba(255, 253, 253, 0.7);
+		transform: translateY(-150%);
+		/* 初期状態で画面外に隠す */
+		transition: transform 0.5s ease-in-out;
+		/* スムーズなアニメーションを追加 */
+	}
+
+	.menu-panel.show {
+		transform: translateY(0);
+	}
+
+	.menu-panel li {
+		list-style: none;
+		opacity: 1;
+		transition: 0.5s ease-in-out;
+	}
+
+	.menu-panel a {
+		text-decoration: none;
+		position: relative;
+		display: block;
+		padding: 1rem;
+		border-bottom: 1.5px solid rgba(255, 253, 253, 0);
+	}
+
+	.menu-panel a::after {
+		content: "";
+		position: absolute;
+		width: 100%;
+		transform: scaleX(0);
+		height: 2px;
+		bottom: 0;
+		left: 0;
+		background-color: #000;
+		transform-origin: bottom right;
+		transition: transform 0.5s ease-out;
+	}
+
+	.menu-panel a:hover::after {
+		transform: scaleX(1);
+		transform-origin: bottom left;
+	}
+</style>
+
+<script src="/js/header.js" defer></script>

@@ -1,0 +1,223 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout>
+    <div class="concepthouse_title title">
+        <p>CONCEPT HOUSE</p>
+    </div>
+
+    <div class="content-part">
+        <div class="house_images">
+            <div class="lineA">
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse1.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse2.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse3.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse4.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse5.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse6.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse7.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse8.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse9.webp"
+                />
+            </div>
+            <div class="lineB">
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse10.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse11.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse12.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse13.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse14.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse15.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse16.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse17.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse18.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse19.webp"
+                />
+            </div>
+            <div class="lineC">
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse20.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse21.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse22.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse23.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse24.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse25.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse26.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse27.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse28.webp"
+                />
+                <img
+                    alt="画像の詳細"
+                    loading="lazy"
+                    src="/images/concepthouse_page/concepthouse29.webp"
+                />
+            </div>
+        </div>
+    </div>
+
+    <div id="modal" class="modal">
+        <div class="margin">
+            <img class="modal-content" id="modalImage" />
+        </div>
+    </div>
+
+    <hr />
+</BaseLayout>
+
+<style>
+    .concepthouse_title {
+        background: url(images/concepthouse_page/concepthouse1.webp) no-repeat
+            center center;
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+    }
+
+    .house_images {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        text-align: center;
+    }
+
+    .house_images img {
+        width: 80%;
+        cursor: pointer;
+        transition: transform 0.2s;
+        margin-bottom: 20%;
+    }
+
+    .house_images img:hover {
+        transform: scale(1.05);
+    }
+
+    /* モーダル */
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 10000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-content {
+        max-width: 80vw;
+        max-height: 80vh;
+        object-fit: contain;
+    }
+</style>
+
+<script src="/js/fedein.js" defer></script>
+<script src="/js/modal.js" defer></script>
