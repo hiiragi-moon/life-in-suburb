@@ -1,5 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { getBlogs } from "../library/microcms";
+
+// ブログ記事一覧の取得
+const response = await getBlogs({ fields: ["id", "title", "image"] });
 ---
 
 <BaseLayout>
@@ -8,49 +12,26 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
     <div class="container">
-        <a
-            href="blog_articles/S邸 10f95b2a7e108015951efa77a683dfc4.html"
-            class="article"
-        >
-            <img
-                src="/images/blog_page/article1.webp"
-                alt="画像の詳細"
-                loading="lazy"
-                alt=""
-            />
-            <h1>2024.7.22</h1>
-            <p>私の家</p>
-        </a>
-        <a href="#" class="article">
-            <img
-                src="/images/blog_page/blog.webp"
-                alt="画像の詳細"
-                loading="lazy"
-                alt=""
-            />
-            <h1>2024.7.15</h1>
-            <p>今週の工事状況</p>
-        </a>
-        <a href="#" class="article">
-            <img
-                src="/images/blog_page/blog.webp"
-                alt="画像の詳細"
-                loading="lazy"
-                alt=""
-            />
-            <h1>2024.7.8</h1>
-            <p>今週の工事状況</p>
-        </a>
-        <a href="#" class="article">
-            <img
-                src="/images/blog_page/blog.webp"
-                alt="画像の詳細"
-                loading="lazy"
-                alt=""
-            />
-            <h1>2024.7.1</h1>
-            <p>今週の工事状況</p>
-        </a>
+        <!--ul>
+            {
+                response.contents.map((content: any) => (
+                    <div>
+                        <li key={content.id} class="blog-item">
+                            <a href={content.id}>
+                                {content.image && (
+                                    <img
+                                        src={content.image.url}
+                                        alt={content.title}
+                                        class="blog-image"
+                                    />
+                                )}
+                                <h3>{content.title}</h3>
+                            </a>
+                        </li>
+                    </div>
+                ))
+            }
+        </ul> -->
     </div>
 
     <hr />
@@ -58,27 +39,51 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <style>
     .blog {
-        background: url(images/blog_page/blog.webp) no-repeat center center;
+        background: url(/images/blog_page/blog.webp) no-repeat center center;
         background-size: cover;
         background-position: center;
         overflow: hidden;
     }
+
     .container {
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        column-gap: 20px;
-        row-gap: 10px;
-        margin: 15%;
-        margin-top: 10%;
-        margin-bottom: 10%;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 10px;
+        margin: 10% 15%;
     }
-    .article h1 {
-        text-align: left;
-        font-size: 16px;
+
+    /* 各アイテムのスタイル */
+    .blog-item {
+        background-color: rgba(255, 255, 255, 0.8); /* 背景色 */
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition:
+            transform 0.3s ease,
+            box-shadow 0.3s ease;
     }
-    .article p {
-        text-align: left;
-        font-size: 16px;
+
+    .blog-item a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .blog-item:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .blog-item img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .blog-item h3 {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        text-align: center;
     }
 </style>
 
