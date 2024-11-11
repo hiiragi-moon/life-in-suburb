@@ -1,0 +1,72 @@
+---
+import Loading from "../components/Loading.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title, date, img } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>Life In Suburb</title>
+        <meta name="description" content="Life In Suburb" />
+
+        <!-- CSS -->
+        <link rel="stylesheet" href="http://unpkg.com/ress/dist/ress.min.css" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&family=Noto+Sans+JP:wght@300;500&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="/styles/global.css" />
+    </head>
+
+    <body>
+        <Loading />
+        <Header />
+        <main>
+            <div class="article">
+                <div class="article_title">
+                    <h2>{date}</h2>
+                    <h1>{title}</h1>
+                </div>
+                <div class="mainimg">
+                    <img
+                        alt="メイン"
+                        loading="lazy"
+                        src={`/images/article_images/${img}`}
+                    />
+                </div>
+
+                <slot />
+            </div>
+            <hr />
+        </main>
+        <Footer />
+    </body>
+</html>
+
+<style>
+    .article {
+        margin: 80px 13% 10% 13%;
+    }
+    .mainimg {
+        margin: 7% 0% 5% 0%;
+    }
+    .article_title h1 {
+        text-align: left;
+        font-size: 25px;
+    }
+    .article_title h2 {
+        text-align: left;
+        font-size: 16px;
+        font-weight: 300;
+        margin-bottom: 10px;
+    }
+
+    .article_img {
+        margin: 5% 0% 5% 0%;
+    }
+    .
+</style>

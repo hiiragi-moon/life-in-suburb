@@ -1,5 +1,6 @@
 ---
 import IndexLayout from "../layouts/IndexLayout.astro";
+import Item from "../components/Articleitem.astro";
 export const images = [
 	"/images/index_page/slides/slide1.webp",
 	"/images/index_page/slides/slide2.webp",
@@ -28,8 +29,9 @@ export const images = [
 			<div class="parttitle fade-in ourthought-part">
 				<h1>Our Thought</h1>
 				<p>
-					スタイルやバランスを意識し、素材や質感、製品へのこだわりを強く持ち、<br
-					/>小さな部分での重なりが全体への大きな違いを生み出すと考えています。
+					スタイルやバランスを意識し、素材や質感、製品へのこだわりを強く持つことで、<br
+					/>小さな部分での重なりが全体としての大きな違いを生み出すと考えています。<br
+					/>このような違いがお客様の生活を豊かにできる一助となることが私たちの喜びです。
 				</p>
 			</div>
 		</div>
@@ -46,11 +48,11 @@ export const images = [
 				<p>
 					自然に囲まれた郊外で、大切な人と心豊かな暮らしを。
 					<br />
-					ゆとりある空間で家族の気配を感じながら、それぞれのペースで過ごすことができる住まい。
+					ゆとりある空間で家族の気配を感じながら、それぞれのペースで過ごすことができる住まいを。
 					<br />
 					心地よさに包まれながらもパーソナルスペースを大切にし、暮らしの中から自由な発想が生まれる環境をご提案。
 					<br />
-					建物は長期優良住宅を基本とし、次世代へ次ぐこともできる安心の住まいをご提供します。
+					建物は長期優良住宅を基本とし、次世代へ継ぐこともできる安心の住まいをご提供します。
 				</p>
 
 				<div class="viewmore">
@@ -62,6 +64,10 @@ export const images = [
 		</div>
 
 		<div class="parts">
+			<div class="parttitle fade-in">
+				<h1>WORKS</h1>
+			</div>
+
 			<div class="thought-part">
 				<div class="thought_container_a fade-in">
 					<p>Living</p>
@@ -102,53 +108,22 @@ export const images = [
 			<div class="parttitle fade-in">
 				<h1>BLOG</h1>
 			</div>
-
-			<div class="container fade-in">
-				<a
-					href="blog_articles/S邸 10f95b2a7e108015951efa77a683dfc4.html"
-					class="item article"
-				>
-					<img
-						src="/images/blog_page/article1.webp"
-						alt="画像の詳細"
-						loading="lazy"
-						alt=""
+			<div class="wrapper">
+				<div class="container">
+					<Item
+						title="まずは解体からです。"
+						date="2024.9.20"
+						img="article02/01.webp"
+						link="article02"
 					/>
-					<h1>2024.7.22</h1>
-					<p>私の家</p>
-				</a>
-				<a href="#" class="item article">
-					<img
-						src="/images/blog_page/blog.webp"
-						alt="画像の詳細"
-						loading="lazy"
-						alt=""
+					<Item
+						title="始まります。"
+						date="2024.9.11"
+						img="article01/01.webp"
+						link="article01"
 					/>
-					<h1>2024.7.15</h1>
-					<p>今週の工事状況</p>
-				</a>
-				<a href="#" class="item article">
-					<img
-						src="/images/blog_page/blog.webp"
-						alt="画像の詳細"
-						loading="lazy"
-						alt=""
-					/>
-					<h1>2024.7.8</h1>
-					<p>今週の工事状況</p>
-				</a>
-				<a href="#" class="item article">
-					<img
-						src="/images/blog_page/blog.webp"
-						alt="画像の詳細"
-						loading="lazy"
-						alt=""
-					/>
-					<h1>2024.7.1</h1>
-					<p>今週の工事状況</p>
-				</a>
+				</div>
 			</div>
-
 			<div class="viewmore fade-in">
 				<button onclick="location.href='blog'"> VIEW MORE </button>
 			</div>
@@ -184,174 +159,177 @@ export const images = [
 		</div>
 	</div>
 	<hr />
+
+	<style>
+		/* スライドショー */
+		.slideshow {
+			height: 820px;
+		}
+		.slide {
+			position: absolute;
+			height: 750px;
+			width: 100%;
+			overflow: hidden;
+			object-fit: cover;
+			opacity: 0;
+			transition: opacity 0.8s ease-in-out;
+		}
+		.slide.show {
+			opacity: 1;
+		}
+		.logo {
+			top: 360px;
+			left: 50%;
+			-ms-transform: translate(-50%, -50%);
+			-webkit-transform: translate(-50%, -50%);
+			transform: translate(-50%, -50%);
+			position: absolute;
+			font-size: 90px;
+			font-weight: 400;
+			color: #fffffff7;
+			opacity: 0;
+			transition: opacity 2s ease-out 1.5s;
+			z-index: 2000;
+		}
+		.logo.show {
+			opacity: 1;
+		}
+
+		/*共通*/
+		.parts {
+			margin-bottom: 20%;
+		}
+		.wrapper {
+			margin-top: 5%;
+			margin-bottom: 7%;
+		}
+		.parttitle h1 {
+			font-size: 40px;
+			margin-bottom: 3%;
+		}
+		.viewmore {
+			text-align: center;
+			margin-top: 2%;
+		}
+		.viewmore button {
+			background-color: #ffffff;
+			color: rgb(0, 0, 0);
+			padding: 20px 60px;
+			border: 1px solid #000000;
+			cursor: pointer;
+			transition: 0.5s ease;
+		}
+		.viewmore button:hover {
+			color: #ffffff;
+			background-color: #202020;
+		}
+
+		/*Concept*/
+		.concept-part {
+			position: relative;
+			display: grid;
+			grid-template-columns: 1.5fr 1fr;
+		}
+		.concept-part h1 {
+			font-size: 40px;
+			text-align: left;
+			margin-left: 8%;
+			margin-bottom: 5%;
+		}
+		.concept-part p {
+			line-height: 30px;
+			margin-left: 8%;
+			text-align: left;
+		}
+		.concept-part-right p {
+			margin-bottom: 5%;
+		}
+
+		/*Ourthought*/
+		.ourthought-part h1 {
+			font-size: 40px;
+		}
+		.ourthought-part p {
+			font-size: 20px;
+			margin-bottom: 20%;
+		}
+		.thought-part p {
+			font-size: 25px;
+		}
+		.thought_container_a {
+			display: grid;
+			grid-template-columns: 1fr 2fr;
+			margin-top: 10%;
+			margin-bottom: 10%;
+		}
+		.thought_container_a p {
+			padding-top: 20%;
+		}
+		.thought_container_b {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1.3fr;
+			margin-bottom: 10%;
+		}
+		.pic2-com {
+			text-align: left;
+			margin: 30% 0 0 20%;
+		}
+		.pic3-com {
+			margin: 150% 20% 0 0;
+			text-align: right;
+		}
+		.pic3 {
+			margin-top: 30%;
+		}
+
+		/*Blog*/
+		.article h1 {
+			text-align: left;
+			font-size: 16px;
+		}
+		.article p {
+			text-align: left;
+			font-size: 16px;
+		}
+
+		/*office*/
+		.office {
+			display: grid;
+			grid-template-columns: 30% 70%;
+			gap: 20px;
+		}
+		.office_item {
+			text-align: center;
+		}
+		.office_item h1 {
+			font-size: 24px;
+			text-align: left;
+			padding-bottom: 10%;
+		}
+		.office_item p {
+			text-align: left;
+			font-size: 16px;
+			margin-bottom: 3%;
+		}
+		.office_item_map {
+			padding-top: 10%;
+		}
+		.office_item_map a {
+			padding: 5%;
+			padding-left: 30%;
+			padding-right: 30%;
+			white-space: nowrap;
+			text-decoration: none;
+			border: 1px solid #000000;
+			transition: 0.5s ease;
+		}
+		.office_item_map a:hover {
+			color: #ffffff;
+			background-color: #000000;
+			opacity: 1;
+		}
+	</style>
+
+	<script src="/js/fadein.js" defer></script>
+	<script src="/js/index.js" defer></script>
 </IndexLayout>
-
-<style>
-	/* スライドショー */
-	.slideshow {
-		height: 820px;
-	}
-	.slide {
-		position: absolute;
-		height: 750px;
-		width: 100%;
-		overflow: hidden;
-		object-fit: cover;
-		opacity: 0;
-		transition: opacity 0.8s ease-in-out;
-	}
-	.slide.show {
-		opacity: 1;
-	}
-	.logo {
-		top: 360px;
-		left: 50%;
-		-ms-transform: translate(-50%, -50%);
-		-webkit-transform: translate(-50%, -50%);
-		transform: translate(-50%, -50%);
-		position: absolute;
-		font-size: 50px;
-		font-weight: 400;
-		color: #fffffff7;
-		opacity: 0;
-		transition: opacity 2s ease-out 1.5s;
-		z-index: 2000;
-	}
-	.logo.show {
-		opacity: 1;
-	}
-
-	/*共通*/
-	.parts {
-		margin-bottom: 10%;
-	}
-	.parttitle h1 {
-		font-weight: bold;
-		font-size: 30px;
-		margin-bottom: 3%;
-	}
-	.viewmore {
-		text-align: center;
-		margin-top: 2%;
-	}
-	.viewmore button {
-		background-color: #ffffff;
-		color: rgb(0, 0, 0);
-		padding: 20px 60px;
-		border: 1px solid #000000;
-		cursor: pointer;
-		transition: 0.5s ease;
-	}
-	.viewmore button:hover {
-		color: #ffffff;
-		background-color: #202020;
-	}
-
-	/*Conceptt*/
-	.concept-part {
-		position: relative;
-		display: grid;
-		grid-template-columns: 1.5fr 1fr;
-	}
-	.concept-part h1 {
-		font-size: 30px;
-		text-align: left;
-		margin-left: 8%;
-		margin-bottom: 5%;
-	}
-	.concept-part p {
-		line-height: 30px;
-		margin-left: 8%;
-		text-align: left;
-	}
-	.concept-part-right p {
-		margin-bottom: 5%;
-	}
-
-	/*Ourthought*/
-	.ourthought-part h1 {
-		font-size: 40px;
-	}
-	.ourthought-part p {
-		font-size: 20px;
-		margin-bottom: 20%;
-	}
-	.thought-part p {
-		font-size: 25px;
-	}
-	.thought_container_a {
-		display: grid;
-		grid-template-columns: 1fr 2fr;
-		margin-top: 10%;
-		margin-bottom: 10%;
-	}
-	.thought_container_a p {
-		padding-top: 20%;
-	}
-	.thought_container_b {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1.3fr;
-		margin-bottom: 10%;
-	}
-	.pic2-com {
-		text-align: left;
-		margin: 30% 0 0 20%;
-	}
-	.pic3-com {
-		margin: 150% 20% 0 0;
-		text-align: right;
-	}
-	.pic3 {
-		margin-top: 30%;
-	}
-
-	/*Blog*/
-	.article h1 {
-		text-align: left;
-		font-size: 16px;
-	}
-	.article p {
-		text-align: left;
-		font-size: 16px;
-	}
-
-	/*office*/
-	.office {
-		display: grid;
-		grid-template-columns: 30% 70%;
-		gap: 20px;
-	}
-	.office_item {
-		text-align: center;
-	}
-	.office_item h1 {
-		font-size: 24px;
-		text-align: left;
-		padding-bottom: 10%;
-	}
-	.office_item p {
-		text-align: left;
-		font-size: 16px;
-		margin-bottom: 3%;
-	}
-	.office_item_map {
-		padding-top: 10%;
-	}
-	.office_item_map a {
-		padding: 5%;
-		padding-left: 30%;
-		padding-right: 30%;
-		white-space: nowrap;
-		text-decoration: none;
-		border: 1px solid #000000;
-		transition: 0.5s ease;
-	}
-	.office_item_map a:hover {
-		color: #ffffff;
-		background-color: #000000;
-		opacity: 1;
-	}
-</style>
-
-<script src="/js/fadein.js" defer></script>
-<script src="/js/index.js" defer></script>

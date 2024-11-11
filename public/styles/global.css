@@ -29,6 +29,7 @@ img {
 	width: 100%;
 }
 
+/*ページタイトル*/
 .title {
 	height: 640px;
 	margin-bottom: 60px;
@@ -38,10 +39,11 @@ img {
 	text-align: center;
 	line-height: 640px;
 	font-weight: 500;
-	font-size: 50px;
+	font-size: 60px;
 	color: #ffffff;
 }
 
+/*ページレイアウト系*/
 .content-part {
 	margin: 10%;
 }
@@ -52,10 +54,11 @@ img {
 
 .container {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: repeat(3, 1fr);
 	gap: 20px;
 }
 
+/*フェードイン*/
 .fade-in {
 	opacity: 0;
 	transition: opacity 1s 0.1s ease-in;
