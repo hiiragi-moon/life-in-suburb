@@ -40,13 +40,15 @@
 
 <div class="menu-panel">
 	<ul>
-		<li><a href="/concept">CONCEPT</a></li>
-		<li><a href="/concepthouse">CONCEPT HOUSE</a></li>
-		<li><a href="/works">WORKS</a></li>
-		<li><a href="/orderflow">ORDER FLOW</a></li>
-		<li><a href="/blog">BLOG</a></li>
-		<li><a href="/about">ABOUT</a></li>
-		<li><a href="/contact">CONTACT</a></li>
+		<li class="hoverunderline"><a href="/concept">CONCEPT</a></li>
+		<li class="hoverunderline">
+			<a href="/concepthouse">CONCEPT HOUSE</a>
+		</li>
+		<li class="hoverunderline"><a href="/works">WORKS</a></li>
+		<li class="hoverunderline"><a href="/orderflow">ORDER FLOW</a></li>
+		<li class="hoverunderline"><a href="/blog">BLOG</a></li>
+		<li class="hoverunderline"><a href="/about">ABOUT</a></li>
+		<li class="hoverunderline"><a href="/contact">CONTACT</a></li>
 	</ul>
 </div>
 
@@ -57,29 +59,28 @@
 		height: 60px;
 		width: 100%;
 		background: rgba(255, 253, 253, 0.7);
-		padding: 0 3%;
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		z-index: 1000;
 		border-bottom: 2px solid #575555;
-		white-space: nowrap;
+	}
+
+	.page-header h1 {
+		margin-left: 3%;
 	}
 
 	.header_items_list {
+		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 		list-style: none;
+		width: 20%;
 	}
 	.header_items_list li {
-		margin-right: 20px;
+		margin-right: 10%;
+	}
 
-		align-items: center;
-		justify-content: center;
-	}
-	.header_items {
-		display: flex;
-	}
 	.youtube {
 		width: 2rem;
 	}
@@ -279,4 +280,5 @@
 		background-color: #000000; /* アンダーラインの色 */
 	}
 </style>
+
 <script src="/js/header.js" defer></script>
