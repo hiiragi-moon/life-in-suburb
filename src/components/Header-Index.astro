@@ -4,38 +4,43 @@
 
 <!-- Header -->
 <header class="page-header index-fadein">
-	<h1><a href="/index.html">Life In Suburb</a></h1>
-
-	<ul class="header_items_list">
-		<li>
-			<a href="https://www.youtube.com/">
-				<img
-					class="header_items youtube"
-					src="images/icons/youtube.png"
-					alt="youtube"
-				/>
-			</a>
-		</li>
-		<li>
-			<a
-				href="https://www.instagram.com/_shinmura_?igsh=enFoZ3FzNG9zYXhq"
-			>
-				<img
-					class="header_items instagram"
-					src="/images/icons/instagram.png"
-					alt="instagram"
-				/>
-			</a>
-		</li>
-		<li><a href="contact" class="header_items">CONTACT</a></li>
-		<li>
-			<div class="btn-trigger" id="btn07">
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-		</li>
-	</ul>
+	<div>
+		<h1 class="header_items"><a href="/index.html">Life In Suburb</a></h1>
+	</div>
+	<div>
+		<ul class="items_list">
+			<li>
+				<a href="https://www.youtube.com/">
+					<img
+						class="youtube"
+						src="images/icons/youtube.png"
+						alt="youtube"
+					/>
+				</a>
+			</li>
+			<li>
+				<a
+					href="https://www.instagram.com/_shinmura_?igsh=enFoZ3FzNG9zYXhq"
+				>
+					<img
+						class="instagram"
+						src="/images/icons/instagram.png"
+						alt="instagram"
+					/>
+				</a>
+			</li>
+			<li>
+				<a href="contact" class="header_items">CONTACT</a>
+			</li>
+			<li>
+				<div class="btn-trigger" id="btn07">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</li>
+		</ul>
+	</div>
 </header>
 
 <div class="menu-panel">
@@ -58,35 +63,51 @@
 		position: fixed;
 		height: 60px;
 		width: 100%;
+		padding: 10px 3%; /* 上下10px、左右5%の余白 */
 		background: rgba(255, 253, 253, 0.7);
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
 		z-index: 1000;
 		border-bottom: 2px solid #575555;
+		box-sizing: border-box;
 	}
 
-	.page-header h1 {
-		margin-left: 3%;
+	.header_items {
+		box-sizing: border-box;
+		margin: 0; /* 不要な余白をリセット */
 	}
 
-	.header_items_list {
+	.items_list {
 		box-sizing: border-box;
 		display: flex;
 		align-items: center;
 		list-style: none;
-		width: 20%;
+		gap: 1rem;
 	}
-	.header_items_list li {
-		margin-right: 10%;
+
+	.items_list li {
+		display: flex;
+		align-items: center;
 	}
 
 	.youtube {
 		width: 2rem;
+		margin-right: 0.5rem; /* Instagramアイコンとの間に余白 */
 	}
 
 	.instagram {
 		width: 1.5rem;
+		margin-right: 0.5rem; /* CONTACTリンクとの間に余白 */
+	}
+
+	.btn-trigger {
+		cursor: pointer;
+		margin-left: 0.5rem; /* リストの最後に少し余白を追加 */
+	}
+
+	.menu-panel ul {
+		list-style: none;
 	}
 
 	/* Menu Panel */
@@ -101,7 +122,6 @@
 		transform: translateY(-150%);
 		transition: transform 0.5s ease-in-out;
 	}
-
 	.menu-panel ul {
 		padding: 0;
 		margin: 0;
@@ -136,7 +156,6 @@
 	.btn-trigger span:nth-of-type(3) {
 		bottom: 10px;
 	}
-
 	#btn07 span:nth-of-type(1) {
 		-webkit-animation: btn07-bar01 0.5s forwards;
 		animation: btn07-bar01 0.5s forwards;
@@ -248,12 +267,10 @@
 			transform: translateY(-10px) rotate(-45deg);
 		}
 	}
-
 	.menu-panel li {
 		opacity: 1;
 		transition: 0.5s ease-in-out;
 	}
-
 	.menu-panel a {
 		text-decoration: none; /* デフォルトのアンダーラインを削除 */
 		display: block;
@@ -261,7 +278,6 @@
 		position: relative; /* 擬似要素を制御するために相対位置を設定 */
 		border-bottom: 1.5px solid rgba(255, 253, 253, 0); /* 初期状態で透明 */
 	}
-
 	.menu-panel a::after {
 		content: "";
 		position: absolute;
@@ -274,7 +290,6 @@
 		transform-origin: left; /* 左端からアニメーション開始 */
 		transition: transform 0.7s ease;
 	}
-
 	.menu-panel a:hover::after {
 		transform: scaleX(1); /* 横幅を100%に拡大 */
 		background-color: #000000; /* アンダーラインの色 */
