@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-import Item from "../components/Articleitem.astro";
+
+const posts = await Astro.glob("../pages/post/*.md"); // returns an array of posts that live at ./src/pages/post/*.md
 ---
 
 <BaseLayout>
@@ -8,31 +9,20 @@ import Item from "../components/Articleitem.astro";
         <p>BLOG</p>
     </div>
     <div class="content-part">
-        <div class="container">
-            <!-- <Item
-                title="None"
-                date="20xx.xx.xx"
-                img="none.webp"
-                link="#"
-            />
-            <Item
-                title="None"
-                date="20xx.xx.xx"
-                img="none.webp"
-                link="#"
-            />-->
-            <Item
-                title="まずは解体からです。"
-                date="2024.9.20"
-                img="article02/01.webp"
-                link="article02"
-            />
-            <Item
-                title="始まります。"
-                date="2024.9.11"
-                img="article01/01.webp"
-                link="article01"
-            />
+        <div class="container fadein">
+            {
+                posts.slice(0, 100).map((post) => (
+                    <a href={post.frontmatter.url}>
+                        <img
+                            src={post.frontmatter.image}
+                            alt={post.frontmatter.description}
+                            loading="lazy"
+                        />
+                        <h2>{post.frontmatter.date}</h2>
+                        <h1>{post.frontmatter.title}</h1>
+                    </a>
+                ))
+            }
         </div>
     </div>
     <hr />
@@ -44,6 +34,16 @@ import Item from "../components/Articleitem.astro";
         background-size: cover;
         background-position: center;
         overflow: hidden;
+    }
+    h1 {
+        text-align: left;
+        font-size: 16px;
+        font-weight: 300;
+    }
+    h2 {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 300;
     }
 </style>
 

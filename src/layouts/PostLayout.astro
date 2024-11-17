@@ -3,7 +3,7 @@ import Loading from "../components/Loading.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 
-const { title, date, img } = Astro.props;
+const { frontmatter } = Astro.props;
 ---
 
 <!doctype html>
@@ -29,14 +29,14 @@ const { title, date, img } = Astro.props;
         <main>
             <div class="article">
                 <div class="article_title">
-                    <h2>{date}</h2>
-                    <h1>{title}</h1>
+                    <h2>{frontmatter.date}</h2>
+                    <h1>{frontmatter.title}</h1>
                 </div>
                 <div class="mainimg">
                     <img
                         alt="メイン"
                         loading="lazy"
-                        src={`/images/article_images/${img}`}
+                        src={frontmatter.image}
                     />
                 </div>
 
