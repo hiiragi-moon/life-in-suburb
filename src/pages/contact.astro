@@ -12,10 +12,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <h1>Contact Form</h1>
         </div>
 
-        <form id="contactForm" class="form">
+        <form
+            id="contactForm"
+            action="https://t3b7wm6gc75eqklstsp7mj4p2q0itssk.lambda-url.ap-northeast-1.on.aws/"
+            method="post"
+        >
             <div class="list-group">
                 <div class="list-name">
-                    <label for="name" class="required">お名前 </label>
+                    <label for="name" class="required">お名前</label>
                 </div>
                 <div class="list-box">
                     <input type="text" id="name" name="name" required />
@@ -23,7 +27,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="list-group">
                 <div class="list-name">
-                    <label for="furigana" class="required">フリガナ </label>
+                    <label for="furigana" class="required">フリガナ</label>
                 </div>
                 <div class="list-box">
                     <input type="text" id="furigana" name="furigana" required />
@@ -32,8 +36,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <div class="list-group">
                 <div class="list-name">
                     <label for="company"
-                        >会社名 (法人様の場合はご記入ください) ；
-                    </label>
+                        >会社名 (法人様の場合はご記入ください)</label
+                    >
                 </div>
                 <div class="list-box">
                     <input type="text" id="company" name="company" />
@@ -41,7 +45,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="list-group">
                 <div class="list-name">
-                    <label class="required">メールアドレス </label>
+                    <label for="email" class="required">メールアドレス</label>
                 </div>
                 <div class="list-box">
                     <input type="email" id="email" name="email" required />
@@ -49,37 +53,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="list-group">
                 <div class="list-name">
-                    <label for="phone" class="required">電話番号 </label>
+                    <label for="phone1" class="required">電話番号</label>
                 </div>
                 <div class="list-box">
                     <div class="phone-split">
-                        <input
-                            type="text"
-                            id="phone1"
-                            name="phone1"
-                            pattern="\d{3}"
-                            required
-                        />ー
-                        <input
-                            type="text"
-                            id="phone2"
-                            name="phone2"
-                            pattern="\d{4}"
-                            required
-                        />ー
-                        <input
-                            type="text"
-                            id="phone3"
-                            name="phone3"
-                            pattern="\d{4}"
-                            required
-                        />
+                        <input id="phone1" name="phone1" required />ー
+                        <input id="phone2" name="phone2" required />ー
+                        <input id="phone3" name="phone3" required />
                     </div>
                 </div>
             </div>
             <div class="list-group">
                 <div class="list-name">
-                    <label for="postal_code" class="required">郵便番号 </label>
+                    <label for="postal_code1" class="required">郵便番号</label>
                 </div>
                 <div class="list-box">
                     <div class="postal-code-split">
@@ -87,14 +73,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                             type="text"
                             id="postal_code1"
                             name="postal_code1"
-                            pattern="\d{3}"
                             required
                         />ー
                         <input
                             type="text"
                             id="postal_code2"
                             name="postal_code2"
-                            pattern="\d{4}"
                             required
                         />
                     </div>
@@ -102,7 +86,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="list-group">
                 <div class="list-name">
-                    <label class="required">住所 </label>
+                    <label for="address" class="required">住所</label>
                 </div>
                 <div class="list-box">
                     <input type="text" id="address" name="address" />
@@ -110,10 +94,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="list-group">
                 <div class="list-name">
-                    <label class="required">お問い合わせ種別 </label>
+                    <label for="inquiry_type" class="required"
+                        >お問い合わせ種別</label
+                    >
                 </div>
                 <div class="list-box">
-                    <select id="inquiry_type" name="inquiry_type">
+                    <select id="inquiry_type" name="inquiry_type" required>
                         <option value="">選択してください</option>
                         <option value="住宅新築">住宅新築</option>
                         <option value="住宅リフォーム">住宅リフォーム</option>
@@ -127,121 +113,105 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </div>
             <div class="list-group">
                 <div class="list-name">
-                    <label>お問い合わせ内容</label>
+                    <label for="message">お問い合わせ内容</label>
                 </div>
                 <div class="list-box">
                     <textarea id="message" name="message"></textarea>
                 </div>
             </div>
 
-            <!-- <input type="hidden" name="redirectTo" value="contact_thanks.html"> -->
-
             <div class="button_area">
                 <button type="submit">確定</button>
             </div>
         </form>
+
+        <hr />
     </div>
 
-    <hr />
+    <style>
+        .contact {
+            background: url(/images/contact_page/contact.jpg) no-repeat center
+                center;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        .formtitle h1 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        .list-group {
+            text-align: center;
+        }
+        .list-name {
+            text-align: left;
+            margin-bottom: 2%;
+        }
+        .list-box input,
+        .list-box select {
+            padding: 7px;
+            border: 1px solid #000000;
+            margin-bottom: 4%;
+            width: 100%;
+        }
+        .list-box textarea {
+            padding: 30px;
+            border: 1px solid #000000;
+            margin-bottom: 4%;
+            width: 100%;
+        }
+        .phone-split,
+        .postal-code-split {
+            text-align: left;
+        }
+        .phone-split input {
+            width: 100px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .phone-split input:first-child {
+            margin-left: 0;
+        }
+        .postal-code-split input {
+            width: 110px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .phone-split,
+        .postal-code-split {
+            align-items: center;
+        }
+        .required:after {
+            content: "必須";
+            margin-left: 10px;
+            padding: 3px;
+            font-size: 13px;
+            color: #626262;
+            border: 1px solid #626262;
+        }
+
+        .button_area {
+            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+
+        #inquiry_type option[value=""] {
+            color: gray;
+        }
+
+        .button_area button {
+            border: 1px solid #000000;
+            color: rgb(0, 0, 0);
+            padding: 30px 100px;
+            transition: 0.5s ease;
+        }
+
+        .button_area button:hover {
+            color: #ffffff;
+            background-color: #000000;
+        }
+    </style>
+
+    <script src="/js/fadein.js" defer></script>
 </BaseLayout>
-
-<style>
-    .contact {
-        background: url(/images/contact_page/contact.jpg) no-repeat center
-            center;
-        background-size: cover;
-        background-position: center;
-        overflow: hidden;
-    }
-    .formtitle h1 {
-        font-size: 30px;
-        margin-bottom: 30px;
-    }
-    .list-group {
-        text-align: center;
-    }
-    .list-name {
-        text-align: left;
-        margin-bottom: 2%;
-    }
-    .list-box input,
-    .list-box select {
-        padding: 7px;
-        border: 1px solid #000000;
-        margin-bottom: 4%;
-        width: 100%;
-    }
-    .list-box textarea {
-        padding: 30px;
-        border: 1px solid #000000;
-        margin-bottom: 4%;
-        width: 100%;
-    }
-    .phone-split,
-    .postal-code-split {
-        text-align: left;
-    }
-    .phone-split input {
-        width: 100px;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    .phone-split input:first-child {
-        margin-left: 0;
-    }
-    .postal-code-split input {
-        width: 110px;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    .phone-split,
-    .postal-code-split {
-        align-items: center;
-    }
-    .required:after {
-        content: "必須";
-        margin-left: 10px;
-        padding: 3px;
-        font-size: 13px;
-        color: #626262;
-        border: 1px solid #626262;
-    }
-
-    .button_area {
-        text-align: center;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-
-    #inquiry_type option[value=""] {
-        color: gray;
-    }
-
-    .button_area button {
-        border: 1px solid #000000;
-        color: rgb(0, 0, 0);
-        padding: 30px 100px;
-        transition: 0.5s ease;
-    }
-
-    .button_area button:hover {
-        color: #ffffff;
-        background-color: #000000;
-    }
-
-    /*input[type="submit"] {
-        border: 1px solid #000000;
-        background-color: #ffffff;
-        color: rgb(0, 0, 0);
-        padding: 20px 80px;
-        transition: color 0.5s ease;
-        transition: background-color 0.5s ease;
-    }
-
-    input[type="submit"]:hover {
-        color: #ffffff;
-        background-color: #414040;
-    }*/
-</style>
-
-<script src="/js/fadein.js" defer></script>
