@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "始まります。"
-date: "2024.9.11"
+title: "玄関土間"
+date: "2024.10.12"
 image: "/images/article_images/article01/01.webp"
 category: "first"
 url: "/post/post5"
 ---
 
-ここに本文を書きます。
+充分な広さの玄関ホールです。この空間を利用して玄関の土間収納を設けます。
 
-- Astroの使い方
-- Markdownの構造
-- コンポーネントの利用
+玄関の収納スペースは利便性がいいのですが散らかりがちです。
+
+整理することで使い勝手もよく見せる収納が作ることができます。

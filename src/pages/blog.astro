@@ -11,17 +11,20 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
     <div class="content-part">
         <div class="container fadein">
             {
-                posts.slice(0, 100).map((post) => (
-                    <a href={post.frontmatter.url}>
-                        <img
-                            src={post.frontmatter.image}
-                            alt={post.frontmatter.description}
-                            loading="lazy"
-                        />
-                        <h2>{post.frontmatter.date}</h2>
-                        <h1>{post.frontmatter.title}</h1>
-                    </a>
-                ))
+                posts
+                    .reverse()
+                    .slice(0, 50)
+                    .map((post) => (
+                        <a href={post.frontmatter.url}>
+                            <img
+                                src={post.frontmatter.image}
+                                alt={post.frontmatter.description}
+                                loading="lazy"
+                            />
+                            <h2>{post.frontmatter.date}</h2>
+                            <h1>{post.frontmatter.title}</h1>
+                        </a>
+                    ))
             }
         </div>
     </div>
@@ -34,16 +37,6 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
         background-size: cover;
         background-position: center;
         overflow: hidden;
-    }
-    h1 {
-        text-align: left;
-        font-size: 16px;
-        font-weight: 300;
-    }
-    h2 {
-        text-align: left;
-        font-size: 14px;
-        font-weight: 300;
     }
 </style>
 

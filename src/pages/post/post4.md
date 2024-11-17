@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "始まります。"
-date: "2024.9.11"
+title: "小屋裏"
+date: "2024.10.5"
 image: "/images/article_images/article01/01.webp"
 category: "first"
 url: "/post/post4"
 ---
 
-ここに本文を書きます。
+梁を下げて小屋裏スペースを確保。梁下には柱を立ててパントリーと
 
-- Astroの使い方
-- Markdownの構造
-- コンポーネントの利用
+土間収納スペースを作ります。まだ柱だけなのでイメージが難しいです。
+
+図面や骨組みの状態で立体的な完成を想像するのは楽しいものです。
