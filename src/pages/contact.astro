@@ -12,11 +12,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <h1>Contact Form</h1>
         </div>
 
-        <form
-            id="contactForm"
-            action="https://t3b7wm6gc75eqklstsp7mj4p2q0itssk.lambda-url.ap-northeast-1.on.aws/"
-            method="post"
-        >
+        <form action="https://ssgform.com/s/CM4lOJZXjPJ0" method="post">
             <div class="list-group">
                 <div class="list-name">
                     <label for="name" class="required">お名前</label>
@@ -116,7 +112,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     <label for="message">お問い合わせ内容</label>
                 </div>
                 <div class="list-box">
-                    <textarea id="message" name="message"></textarea>
+                    <textarea class="message" name="message"></textarea>
                 </div>
             </div>
 
@@ -124,93 +120,99 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <button type="submit">確定</button>
             </div>
         </form>
+
+        <div id="notification"></div>
     </div>
+
     <hr />
+
+    <style>
+        /* スタイルはそのまま保持 */
+        #notification {
+            font-size: 16px;
+            padding: 10px;
+            margin-top: 20px;
+            border-radius: 5px;
+            text-align: center;
+            display: none;
+        }
+        .contact {
+            background: url(/images/contact_page/contact.jpg) no-repeat center
+                center;
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        .formtitle h1 {
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+        .list-group {
+            text-align: center;
+        }
+        .list-name {
+            text-align: left;
+            margin-bottom: 2%;
+        }
+        .list-box input,
+        .list-box select {
+            padding: 7px;
+            border: 1px solid #000000;
+            margin-bottom: 4%;
+            width: 100%;
+        }
+        .list-box textarea {
+            padding: 30px;
+            border: 1px solid #000000;
+            margin-bottom: 4%;
+            width: 100%;
+        }
+        .phone-split,
+        .postal-code-split {
+            text-align: left;
+        }
+        .phone-split input {
+            width: 100px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .phone-split input:first-child {
+            margin-left: 0;
+        }
+        .postal-code-split input {
+            width: 110px;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+        .phone-split,
+        .postal-code-split {
+            align-items: center;
+        }
+        .required:after {
+            content: "必須";
+            margin-left: 10px;
+            padding: 3px;
+            font-size: 13px;
+            color: #626262;
+            border: 1px solid #626262;
+        }
+        .button_area {
+            text-align: center;
+            margin-top: 5%;
+            margin-bottom: 5%;
+        }
+        #inquiry_type option[value=""] {
+            color: gray;
+        }
+        .button_area button {
+            border: 1px solid #000000;
+            color: rgb(0, 0, 0);
+            padding: 30px 100px;
+            transition: 0.5s ease;
+        }
+        .button_area button:hover {
+            color: #ffffff;
+            background-color: #000000;
+        }
+    </style>
 </BaseLayout>
-
-<style>
-    .contact {
-        background: url(/images/contact_page/contact.jpg) no-repeat center
-            center;
-        background-size: cover;
-        background-position: center;
-        overflow: hidden;
-    }
-    .formtitle h1 {
-        font-size: 30px;
-        margin-bottom: 30px;
-    }
-    .list-group {
-        text-align: center;
-    }
-    .list-name {
-        text-align: left;
-        margin-bottom: 2%;
-    }
-    .list-box input,
-    .list-box select {
-        padding: 7px;
-        border: 1px solid #000000;
-        margin-bottom: 4%;
-        width: 100%;
-    }
-    .list-box textarea {
-        padding: 30px;
-        border: 1px solid #000000;
-        margin-bottom: 4%;
-        width: 100%;
-    }
-    .phone-split,
-    .postal-code-split {
-        text-align: left;
-    }
-    .phone-split input {
-        width: 100px;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    .phone-split input:first-child {
-        margin-left: 0;
-    }
-    .postal-code-split input {
-        width: 110px;
-        margin-left: 1%;
-        margin-right: 1%;
-    }
-    .phone-split,
-    .postal-code-split {
-        align-items: center;
-    }
-    .required:after {
-        content: "必須";
-        margin-left: 10px;
-        padding: 3px;
-        font-size: 13px;
-        color: #626262;
-        border: 1px solid #626262;
-    }
-
-    .button_area {
-        text-align: center;
-        margin-top: 5%;
-        margin-bottom: 5%;
-    }
-
-    #inquiry_type option[value=""] {
-        color: gray;
-    }
-
-    .button_area button {
-        border: 1px solid #000000;
-        color: rgb(0, 0, 0);
-        padding: 30px 100px;
-        transition: 0.5s ease;
-    }
-
-    .button_area button:hover {
-        color: #ffffff;
-        background-color: #000000;
-    }
-</style>
-
-<script src="/js/fadein.js" defer></script>
