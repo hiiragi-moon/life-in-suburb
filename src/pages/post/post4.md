@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: "小屋裏"
 date: "2024.10.5"
-image: "/images/article_images/article01/01.webp"
+image: "/images/article_images/article04/01.webp"
 category: "first"
 url: "/post/post4"
 ---

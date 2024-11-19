@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: "LDK"
 date: "2024.10.19"
-image: "/images/article_images/article01/01.webp"
+image: "/images/article_images/article06/01.webp"
 category: "first"
 url: "/post/post6"
 ---
