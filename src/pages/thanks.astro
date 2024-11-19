@@ -3,6 +3,16 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
 <BaseLayout>
+    <div class="thanks_content">
+        <h1>お問い合わせフォームの送信を完了致しました。</h1>
+        <p>
+            お問い合わせいただきまして誠にありがとうございます。<br />
+            内容を確認次第、担当者より折返しご連絡させていただきます。今しばらくお待ちくださいませ。
+        </p>
+        <div class="button_area">
+            <button onclick="location.href='/index.html'">TO TOP PAGE</button>
+        </div>
+    </div>
     <hr />
 </BaseLayout>
 
@@ -20,5 +30,18 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .thanks_content p {
         font-size: 20px;
         padding-bottom: 10%;
+    }
+    .button_area {
+        text-align: center;
+    }
+    .button_area button {
+        border: 1px solid #000000;
+        color: rgb(0, 0, 0);
+        padding: 30px 100px;
+        transition: 0.5s ease;
+    }
+    .button_area button:hover {
+        color: #ffffff;
+        background-color: #000000;
     }
 </style>
