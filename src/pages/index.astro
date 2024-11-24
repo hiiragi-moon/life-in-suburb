@@ -1,12 +1,18 @@
 ---
+import { Image } from "astro:assets";
 import IndexLayout from "../layouts/IndexLayout.astro";
 
-export const images = [
-	"/images/index_page/slides/slide1.webp",
-	"/images/index_page/slides/slide2.webp",
-	"/images/index_page/slides/slide3.webp",
-	"/images/index_page/slides/slide4.webp",
-];
+import slides1 from "../images/index_page/slides/slide1.webp";
+import slides2 from "../images/index_page/slides/slide2.webp";
+import slides3 from "../images/index_page/slides/slide3.webp";
+import slides4 from "../images/index_page/slides/slide4.webp";
+import conceptimg from "../images/index_page/top_concept.webp";
+import case1 from "../images/index_page/case1.webp";
+import case2 from "../images/index_page/case2.webp";
+import case3 from "../images/index_page/case3.webp";
+import map from "../images/map.webp";
+
+const images = [slides1, slides2, slides3, slides4];
 const posts = await Astro.glob("../pages/post/*.md"); // returns an array of posts that live at ./src/pages/post/*.md
 ---
 
@@ -14,12 +20,13 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 	<div class="slideshow">
 		<h1 class="logo">Life In Suburb</h1>
 		{
-			images.map((image, index) => (
-				<img
-					src={image}
+			images.map((src, index) => (
+				<Image
+					src={src}
 					alt={`スライド${index + 1}`}
 					class="slide"
 					style={`z-index: ${images.length - index};`}
+					loading="eager"
 				/>
 			))
 		}
@@ -38,11 +45,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		</div>
 		<div class="parts concept-part">
 			<div class="concept-part-left fade-in">
-				<img
-					src="/images/index_page/top_concept.webp"
-					alt="画像の詳細"
-					loading="lazy"
-				/>
+				<Image src={conceptimg} alt="画像の詳細" loading="eager" />
 			</div>
 			<div class="concept-part-right fade-in">
 				<h1>CONCEPT</h1>
@@ -72,31 +75,19 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			<div class="thought-part">
 				<div class="thought_container_a fade-in">
 					<p>Living</p>
-					<img
-						src="/images/index_page/case1.webp"
-						alt="画像の詳細"
-						loading="lazy"
-					/>
+					<Image src={case1} alt="case1" />
 				</div>
 
 				<div class="thought_container_b">
 					<div class="pic2 fade-in">
-						<img
-							src="/images/index_page/case2.webp"
-							alt="画像の詳細"
-							loading="lazy"
-						/>
+						<Image src={case2} alt="case2" />
 					</div>
 					<div class="pics-com fade-in">
 						<p class="pic2-com">Corridor</p>
 						<p class="pic3-com">Entrance</p>
 					</div>
 					<div class="pic3 fade-in">
-						<img
-							src="/images/index_page/case3.webp"
-							alt="画像の詳細"
-							loading="lazy"
-						/>
+						<Image src={case3} alt="case3" />
 					</div>
 				</div>
 
@@ -153,12 +144,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 					</div>
 				</div>
 				<div class="office_item">
-					<img
-						src="/images/map.webp"
-						alt="画像の詳細"
-						loading="lazy"
-						alt=""
-					/>
+					<Image src={map} alt="地図" />
 				</div>
 			</div>
 		</div>
@@ -166,6 +152,10 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 	<hr />
 
 	<style>
+		img {
+			width: 100%;
+			height: auto;
+		}
 		/* スライドショー */
 		.slideshow {
 			height: 820px;

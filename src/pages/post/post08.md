@@ -1,14 +1,14 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "まずは解体からです。"
+title: "洗面ユーティリティ"
 date: "2024.11.2"
 image: "/images/article_images/article08/01.webp"
 category: "first"
 url: "/post/post8"
 ---
 
-まずは何事も壊すことから始まります。
+洗面ユーティリティスペースもスケルトン状態です。
 
-破壊なくして創造なし。
+柱が露出しているこのタイミングで電気屋さんが配線工事を行ってます。
 
-とにかく現状の解体工事からです。
+スイッチやコンセントの位置や数は満足感を左右するポイントです。
