@@ -4,7 +4,7 @@ title: "解体継続中"
 date: "2024.9.30"
 image: "/images/article_images/article03/01.webp"
 category: "first"
-url: "/post/post3"
+url: "/post/post03"
 ---
 
 解体工事が進行中です。

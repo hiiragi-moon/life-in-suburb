@@ -4,7 +4,7 @@ title: "LDK"
 date: "2024.10.19"
 image: "/images/article_images/article06/01.webp"
 category: "first"
-url: "/post/post6"
+url: "/post/post06"
 ---
 
 LDKエリアも工事が進んでいます。

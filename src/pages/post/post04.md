@@ -4,7 +4,7 @@ title: "小屋裏"
 date: "2024.10.5"
 image: "/images/article_images/article04/01.webp"
 category: "first"
-url: "/post/post4"
+url: "/post/post04"
 ---
 
 梁を下げて小屋裏スペースを確保。梁下には柱を立ててパントリーと
