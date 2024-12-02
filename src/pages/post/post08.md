@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "洗面ユーティリティ"
+title: "8. 洗面ユーティリティ"
 date: "2024.11.2"
 image: "/images/article_images/article08/01.webp"
 category: "first"

@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "玄関土間"
+title: "5. 玄関土間"
 date: "2024.10.12"
 image: "/images/article_images/article05/01.webp"
 category: "first"

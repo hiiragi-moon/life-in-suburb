@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "小屋裏"
+title: "4. 小屋裏"
 date: "2024.10.5"
 image: "/images/article_images/article04/01.webp"
 category: "first"

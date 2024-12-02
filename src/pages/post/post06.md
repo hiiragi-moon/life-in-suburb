@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "LDK"
+title: "6. LDK"
 date: "2024.10.19"
 image: "/images/article_images/article06/01.webp"
 category: "first"

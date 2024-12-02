@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "パントリー"
+title: "9. パントリー"
 date: "2024.11.9"
 image: "/images/article_images/article09/01.webp"
 category: "first"

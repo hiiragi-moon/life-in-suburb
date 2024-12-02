@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "リビングダイニング"
+title: "7. リビングダイニング"
 date: "2024.10.26"
 image: "/images/article_images/article07/01.webp"
 category: "first"

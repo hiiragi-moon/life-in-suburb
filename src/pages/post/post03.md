@@ -1,6 +1,6 @@
 ---
 layout: ../../layouts/PostLayout.astro
-title: "解体継続中"
+title: "3. 解体継続中"
 date: "2024.9.30"
 image: "/images/article_images/article03/01.webp"
 category: "first"
