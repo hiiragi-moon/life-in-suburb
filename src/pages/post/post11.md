@@ -3,6 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: "11. オーク・フローリング"
 date: "2024.11.23"
 image: "/images/article_images/article11/01.webp"
+description: "post11"
 category: "first"
 url: "/post/post11"
 ---

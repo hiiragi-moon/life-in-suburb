@@ -3,6 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: "9. パントリー"
 date: "2024.11.9"
 image: "/images/article_images/article09/01.webp"
+description: "post9"
 category: "first"
 url: "/post/post09"
 ---

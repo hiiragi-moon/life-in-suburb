@@ -10,10 +10,10 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/mdx": "^3.1.8",
-    "@astrojs/rss": "^4.0.9",
+    "@astrojs/mdx": "^4.0.1",
+    "@astrojs/rss": "^4.0.10",
     "@astrojs/sitemap": "^3.2.1",
-    "astro": "^4.16.10",
+    "astro": "^5.0.3",
     "dotenv": "^16.4.5",
     "microcms-js-sdk": "^3.1.2",
     "nodemailer": "^6.9.16",
