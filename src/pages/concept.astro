@@ -9,7 +9,10 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     <div class="content-part">
         <div class="concept">
-            <h1>【Life In Surburds】 郊外での豊かな暮らし。</h1>
+            <h1 class="headline desktop">
+                【Life In Suburbs】 郊外での豊かな暮らし。
+            </h1>
+            <h1 class="headline mobile">Life In Suburbs</h1>
             <p>
                 郊外での豊かな暮らしをテーマに、
                 家族の成長とともに柔軟性が高く多様性のあるライフスタイルを提案します。
@@ -162,6 +165,39 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         text-align: left;
         margin-bottom: 10%;
         font-size: 18px;
+    }
+    .headline.mobile {
+        display: none;
+    }
+    @media (max-width: 799px) {
+        .concept h1 {
+            font-size: 24px;
+        }
+        .concept p {
+            font-size: 16px;
+            margin-bottom: 30%;
+        }
+        .headline.desktop {
+            display: none;
+        }
+        .headline.mobile {
+            display: block;
+        }
+        .DC_container_items {
+            grid-template-columns: 1fr;
+        }
+        .DC_container_items img {
+            margin-bottom: 30px;
+        }
+        .DC_container_items h1 {
+            margin-left: 0%;
+            font-size: 18px;
+            margin-bottom: 0%;
+        }
+        .DC_container_items p {
+            margin: 10px 0 15% 18px;
+            font-size: 16px;
+        }
     }
 </style>
 

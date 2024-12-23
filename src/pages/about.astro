@@ -8,8 +8,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             <h1>ABOUT</h1>
         </div>
 
-        <div class="about">
-            <p>Company Profile</p>
+        <div class="about_title">
+            <h1>Company Profile</h1>
         </div>
 
         <table class="about_list">
@@ -45,8 +45,8 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             </tbody>
         </table>
 
-        <div class="about">
-            <p>Office</p>
+        <div class="about_title">
+            <h1>Office</h1>
         </div>
 
         <div class="office">
@@ -55,7 +55,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <p>〒427-0104 静岡県島田市井口1421</p>
                 <p>open：9:00～17:00</p>
                 <p>close：sunday（第1日曜日は営業）</p>
-                <div class="office_item_map">
+                <div class="map_button">
                     <a
                         href="https://maps.app.goo.gl/d1T6yti99d1qib9q8?g_st=com.google.maps.preview.copy"
                     >
@@ -63,7 +63,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                     </a>
                 </div>
             </div>
-            <div class="office_item">
+            <div class="office_map">
                 <img src="/images/map.webp" alt="マップ" />
             </div>
         </div>
@@ -79,11 +79,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         font-size: 40px;
     }
 
-    .about p {
+    .about_title h1 {
         text-align: left;
         font-size: 30px;
         font-weight: bold;
-        margin-bottom: 5%;
+        margin-top: 10%;
+        margin-bottom: 8%;
     }
 
     .about_list {
@@ -128,11 +129,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         margin-bottom: 5%;
     }
 
-    .office_item_map {
+    .map_button {
         margin-top: 30%;
     }
 
-    .office_item_map a {
+    .map_button a {
         padding: 5%;
         padding-left: 30%;
         padding-right: 30%;
@@ -142,10 +143,73 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         transition: 0.5s ease;
     }
 
-    .office_item_map a:hover {
+    .map_button a:hover {
         color: #ffffff;
         background-color: #000000;
         opacity: 1;
+    }
+    @media (max-width: 799px) {
+        .slim-content-part {
+            width: 100%;
+            padding: 10%;
+            padding-bottom: 20%;
+        }
+
+        .about_title h1 {
+            font-size: 26px;
+            font-weight: bold;
+            margin-bottom: 5%;
+        }
+
+        .about_list th,
+        td {
+            font-size: 18px;
+            font-weight: 300;
+            padding-bottom: 10%;
+        }
+        .office {
+            grid-template-columns: 1fr;
+            grid-template-areas:
+                "right"
+                "left";
+        }
+
+        .office_item {
+            grid-area: left;
+        }
+        .office_map {
+            grid-area: right;
+            display: flex;
+            justify-content: center;
+            padding: 0 0 5%;
+        }
+        .office_item h1 {
+            font-size: 22px;
+            text-align: left;
+            padding-bottom: 7%;
+        }
+        .office_item p {
+            text-align: left;
+            margin-bottom: 1%;
+        }
+        .map_button {
+            margin-top: 10%;
+            text-align: center;
+        }
+        .map_button a {
+            padding: 3%;
+            padding-left: 15%;
+            padding-right: 15%;
+            white-space: nowrap;
+            text-decoration: none;
+            border: 1px solid #000000;
+            transition: 0.5s ease;
+        }
+        .map_button a:hover {
+            color: #ffffff;
+            background-color: #000000;
+            opacity: 1;
+        }
     }
 </style>
 

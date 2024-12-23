@@ -14,7 +14,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 <p>初回打ち合わせ</p>
             </div>
             <h2>
-                初回の打ち合わせでは、基本的な要素の確認となります。家族構成・ライフスタイル・好きな家、嫌いな家・間取り・時期・予定地・ご予算・などをお聞かせください。イメージ写真などあれば共有させて頂きます。
+                初回の打ち合わせでは、基本的な要素の確認となります。家族構成・ライフスタイル・好きな家・間取り・時期・予定地・ご予算などをお聞かせください。イメージ写真などあれば共有させて頂きます。
             </h2>
         </div>
 
@@ -160,17 +160,17 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                 マスターキーをお渡しし、お引渡しとなります。各種保証書の発行と融資の実行を行います。
             </h2>
         </div>
+        <div class="tocontact_text">
+            <p>
+                新築住宅・リノベーションのご相談・ご依頼は、お問い合わせフォームよりお願いいたします。
+            </p>
+        </div>
+
+        <div class="tocontact_button">
+            <button onclick="location.href='/contact'">TO CONTACT PAGE</button>
+        </div>
     </div>
 
-    <div class="tocontact_text">
-        <p>
-            新築住宅・リノベーションのご相談・ご依頼は、お問い合わせフォームよりお願いいたします。
-        </p>
-    </div>
-
-    <div class="tocontact_button">
-        <button onclick="location.href='/contact'">TO CONTACT PAGE</button>
-    </div>
     <hr />
 </BaseLayout>
 
@@ -185,7 +185,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     }
 
     .order_content {
-        margin: 10% 15% 0 15%;
+        margin: 10% 15% 10% 15%;
     }
 
     .orderstep {
@@ -198,6 +198,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         font-size: 18px;
         font-weight: 300;
         margin-top: 23px;
+        margin-left: 12px;
     }
 
     .step-left h1 {
@@ -216,8 +217,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         display: flex;
         justify-content: center;
         font-size: 20px;
-        margin-left: 5%;
-        margin-right: 5%;
+
         margin-bottom: 7%;
     }
 
@@ -238,6 +238,43 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     .tocontact_button button:hover {
         color: #ffffff;
         background-color: #000000;
+    }
+
+    @media (max-width: 799px) {
+        .orderstep {
+            grid-template-columns: 1fr;
+            margin-bottom: 10%;
+        }
+        .orderstep h2 {
+            font-size: 16px;
+            font-weight: 300;
+            margin-top: 16px;
+            text-align: left;
+        }
+
+        .step-left h1 {
+            font-size: 14px;
+            text-align: left;
+            font-weight: 300;
+            margin-bottom: 5px;
+        }
+        .step-left p {
+            font-size: 18px;
+            font-weight: 500;
+            text-align: left;
+        }
+
+        .tocontact_text p {
+            font-size: 16px;
+        }
+
+        .tocontact_button {
+            font-size: 16px;
+        }
+
+        .tocontact_button button {
+            padding: 20px 80px;
+        }
     }
 </style>
 

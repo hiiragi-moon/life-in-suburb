@@ -34,13 +34,17 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 
 	<div class="content-part">
 		<div class="parts">
-			<div class="parttitle fade-in ourthought-part">
-				<h1>Our Thought</h1>
-				<p>
-					スタイルやバランスを意識し、素材や質感、製品へのこだわりを強く持つことで、<br
-					/>小さな部分での重なりが全体としての大きな違いを生み出すと考えています。<br
-					/>このような違いがお客様の生活を豊かにできる一助となることが私たちの喜びです。
-				</p>
+			<div class="fade-in ourthought-part">
+				<div class="part_title">
+					<h2>Our Thought</h2>
+				</div>
+				<div>
+					<p>
+						スタイルやバランスを意識し、素材や質感、製品へのこだわりを強く持つことで、<br
+						/>小さな部分での重なりが全体としての大きな違いを生み出すと考えています。<br
+						/>このような違いがお客様の生活を豊かにできる一助となることが私たちの喜びです。
+					</p>
+				</div>
 			</div>
 		</div>
 		<div class="parts concept-part">
@@ -48,7 +52,10 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 				<Image src={conceptimg} alt="Thoughtimg" loading="eager" />
 			</div>
 			<div class="concept-part-right fade-in">
-				<h1>CONCEPT</h1>
+				<div class="part_title">
+					<h2>CONCEPT</h2>
+				</div>
+
 				<p>
 					自然に囲まれた郊外で、大切な人と心豊かな暮らしを。
 					<br />
@@ -68,11 +75,10 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		</div>
 
 		<div class="parts">
-			<div class="parttitle fade-in">
-				<h1>WORKS</h1>
+			<div class="part_title fade-in">
+				<h2>WORKS</h2>
 			</div>
-
-			<div class="thought-part">
+			<div class="content_part">
 				<div class="thought_container_a fade-in">
 					<p>Living</p>
 					<Image src={case1} alt="case1" />
@@ -97,28 +103,26 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			</div>
 		</div>
 		<div class="parts">
-			<div class="parttitle fade-in">
-				<h1>BLOG</h1>
+			<div class="part_title fade-in">
+				<h2>BLOG</h2>
 			</div>
-			<div class="wrapper">
-				<div class="container">
-					{
-						posts
-							.reverse()
-							.slice(0, 3)
-							.map((post) => (
-								<a href={post.frontmatter.url}>
-									<img
-										src={post.frontmatter.image}
-										alt={post.frontmatter.description}
-										loading="lazy"
-									/>
-									<h2>{post.frontmatter.date}</h2>
-									<h1>{post.frontmatter.title}</h1>
-								</a>
-							))
-					}
-				</div>
+			<div class="container fade-in">
+				{
+					posts
+						.reverse()
+						.slice(0, 3)
+						.map((post) => (
+							<a href={post.frontmatter.url}>
+								<img
+									src={post.frontmatter.image}
+									alt={post.frontmatter.description}
+									loading="lazy"
+								/>
+								<h2>{post.frontmatter.date}</h2>
+								<h1>{post.frontmatter.title}</h1>
+							</a>
+						))
+				}
 			</div>
 			<div class="viewmore fade-in">
 				<button onclick="location.href='blog'"> VIEW MORE </button>
@@ -126,8 +130,8 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		</div>
 
 		<div class="parts">
-			<div class="parttitle fade-in">
-				<h1>OFFICE</h1>
+			<div class="part_title fade-in">
+				<h2>OFFICE</h2>
 			</div>
 			<div class="office fade-in">
 				<div class="office_item">
@@ -135,7 +139,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 					<p>〒427-0104 静岡県島田市井口1421</p>
 					<p>open：9:00～17:00</p>
 					<p>close：sunday（第1日曜日は営業）</p>
-					<div class="office_item_map">
+					<div class="map_button">
 						<a
 							href="https://maps.app.goo.gl/d1T6yti99d1qib9q8?g_st=com.google.maps.preview.copy"
 						>
@@ -143,7 +147,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 						</a>
 					</div>
 				</div>
-				<div class="office_item">
+				<div class="office_map">
 					<Image src={map} alt="地図" />
 				</div>
 			</div>
@@ -152,10 +156,6 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 	<hr />
 
 	<style>
-		img {
-			width: 100%;
-			height: auto;
-		}
 		/* スライドショー */
 		.slideshow {
 			height: 820px;
@@ -169,6 +169,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			opacity: 0;
 			transition: opacity 0.8s ease-in-out;
 		}
+
 		.slide.show {
 			opacity: 1;
 		}
@@ -190,17 +191,30 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			opacity: 1;
 		}
 
+		@media (max-width: 799px) {
+			.slideshow {
+				height: 720px;
+			}
+			.slide {
+				position: absolute;
+				height: 680px;
+				width: 100%;
+				overflow: hidden;
+				object-fit: cover;
+				opacity: 0;
+				transition: opacity 0.8s ease-in-out;
+			}
+			.logo {
+				top: 340px;
+				font-size: 40px;
+			}
+		}
 		/*共通*/
+		.part_title {
+			margin-bottom: 6%;
+		}
 		.parts {
 			margin-bottom: 20%;
-		}
-		.wrapper {
-			margin-top: 5%;
-			margin-bottom: 7%;
-		}
-		.parttitle h1 {
-			font-size: 40px;
-			margin-bottom: 3%;
 		}
 		.viewmore {
 			text-align: center;
@@ -225,14 +239,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			display: grid;
 			grid-template-columns: 1.5fr 1fr;
 		}
-		.concept-part h1 {
-			font-size: 40px;
-			text-align: left;
-			margin-left: 8%;
-			margin-bottom: 5%;
-		}
 		.concept-part p {
-			line-height: 30px;
 			margin-left: 8%;
 			text-align: left;
 		}
@@ -240,21 +247,10 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			margin-bottom: 5%;
 		}
 
-		/*Ourthought*/
-		.ourthought-part h1 {
-			font-size: 40px;
-		}
-		.ourthought-part p {
-			font-size: 20px;
-			margin-bottom: 20%;
-		}
-		.thought-part p {
-			font-size: 25px;
-		}
+		/*WORKS*/
 		.thought_container_a {
 			display: grid;
 			grid-template-columns: 1fr 2fr;
-			margin-top: 10%;
 			margin-bottom: 10%;
 		}
 		.thought_container_a p {
@@ -264,6 +260,9 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			display: grid;
 			grid-template-columns: 1fr 1fr 1.3fr;
 			margin-bottom: 10%;
+		}
+		.content_part p {
+			font-size: 25px;
 		}
 		.pic2-com {
 			text-align: left;
@@ -278,23 +277,31 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		}
 
 		/*Blog*/
+		.container {
+			margin-bottom: 6%;
+		}
 		.article h1 {
 			text-align: left;
 			font-size: 16px;
 		}
 		.article p {
 			text-align: left;
-			font-size: 16px;
+		}
+		.container h1 {
+			font-size: 18px;
+			font-weight: 500;
+		}
+		.container h2 {
+			font-size: 14px;
 		}
 
 		/*office*/
 		.office {
+			position: relative;
 			display: grid;
-			grid-template-columns: 30% 70%;
+			grid-template-columns: 1fr 2fr;
 			gap: 20px;
-		}
-		.office_item {
-			text-align: center;
+			width: 100%;
 		}
 		.office_item h1 {
 			font-size: 24px;
@@ -303,13 +310,15 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		}
 		.office_item p {
 			text-align: left;
-			font-size: 16px;
 			margin-bottom: 3%;
 		}
-		.office_item_map {
-			padding-top: 10%;
+		.office_map {
+			width: 100%;
 		}
-		.office_item_map a {
+		.map_button {
+			margin-top: 20%;
+		}
+		.map_button a {
 			padding: 5%;
 			padding-left: 30%;
 			padding-right: 30%;
@@ -318,10 +327,109 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			border: 1px solid #000000;
 			transition: 0.5s ease;
 		}
-		.office_item_map a:hover {
+		.map_button a:hover {
 			color: #ffffff;
 			background-color: #000000;
 			opacity: 1;
+		}
+
+		@media (min-width: 800px) and (max-width: 1040px) {
+			p {
+				font-size: 16px;
+			}
+		}
+		@media (max-width: 799px) {
+			h2 {
+				font-size: 30px;
+			}
+			p {
+				font-size: 16px;
+			}
+			.concept-part {
+				grid-template-columns: 1fr;
+				grid-template-areas:
+					"right"
+					"left";
+			}
+			.concept-part-right {
+				margin-top: 10%;
+			}
+			.concept-part-right p {
+				font-size: 15px;
+				margin: 0 0 20px;
+				text-align: center;
+			}
+			.thought_container_a {
+				display: grid;
+				grid-template-columns: 1fr;
+				margin-bottom: 10%;
+			}
+			.thought_container_a p {
+				display: none;
+			}
+			.thought_container_b {
+				grid-template-columns: 1.5fr 0.4fr 1.5fr;
+			}
+			.pics-com p {
+				display: none;
+			}
+			.pic3 {
+				margin-top: 90%;
+			}
+			.container {
+				grid-template-columns: repeat(1, 70%);
+				justify-content: center;
+				gap: 30px;
+			}
+			.container h1 {
+				font-size: 18px;
+				font-weight: 500;
+			}
+			.container h2 {
+				font-size: 14px;
+			}
+			.office {
+				grid-template-columns: 1fr;
+				grid-template-areas:
+					"right"
+					"left";
+			}
+			.office_item {
+				grid-area: left;
+			}
+			.office_map {
+				grid-area: right;
+				display: flex;
+				justify-content: center;
+				padding: 0% 10% 5%;
+			}
+			.office_item h1 {
+				font-size: 24px;
+				text-align: left;
+				padding-bottom: 7%;
+			}
+			.office_item p {
+				text-align: left;
+				margin-bottom: 1%;
+			}
+			.map_button {
+				margin-top: 10%;
+				text-align: center;
+			}
+			.map_button a {
+				padding: 3%;
+				padding-left: 15%;
+				padding-right: 15%;
+				white-space: nowrap;
+				text-decoration: none;
+				border: 1px solid #000000;
+				transition: 0.5s ease;
+			}
+			.map_button a:hover {
+				color: #ffffff;
+				background-color: #000000;
+				opacity: 1;
+			}
 		}
 	</style>
 
