@@ -14,6 +14,7 @@ const { frontmatter } = Astro.props;
     <body>
         <Loading />
         <Header />
+
         <main>
             <div class="article">
                 <div class="article_title">
@@ -21,17 +22,14 @@ const { frontmatter } = Astro.props;
                     <h1>{frontmatter.title}</h1>
                 </div>
                 <div class="mainimg">
-                    <img
-                        alt="メイン"
-                        loading="lazy"
-                        src={frontmatter.image}
-                    />
+                    <img alt="メイン" loading="lazy" src={frontmatter.image} />
                 </div>
 
                 <slot />
             </div>
             <hr />
         </main>
+
         <Footer />
     </body>
 </html>
@@ -57,5 +55,4 @@ const { frontmatter } = Astro.props;
     .article_img {
         margin: 5% 0% 5% 0%;
     }
-    .
 </style>
