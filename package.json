@@ -1,22 +1,29 @@
 {
-  "name": "projcet-new",
-  "type": "module",
-  "version": "3.1.2",
+  "name": "life-in-suburb",
+  "version": "1.0.0",
+  "main": "index.js",
   "scripts": {
     "dev": "astro dev",
-    "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
-    "astro": "astro"
+    "preview": "astro preview"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hiiragi-moon/life-in-suburb.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hiiragi-moon/life-in-suburb/issues"
+  },
+  "homepage": "https://github.com/hiiragi-moon/life-in-suburb#readme",
+  "description": "",
   "dependencies": {
-    "@astrojs/mdx": "^4.0.1",
-    "@astrojs/rss": "^4.0.10",
-    "@astrojs/sitemap": "^3.2.1",
-    "astro": "^5.0.3",
-    "dotenv": "^16.4.5",
-    "microcms-js-sdk": "^3.1.2",
-    "nodemailer": "^6.9.16",
-    "vite": "^5.4.10"
+    "@tailwindcss/postcss": "^4.0.8",
+    "astro": "^5.3.0",
+    "flowbite": "^3.1.2",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.0.8"
   }
 }
