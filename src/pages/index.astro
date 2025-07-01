@@ -6,7 +6,7 @@ import slides1 from "../images/index_page/slides/slide1.webp";
 import slides2 from "../images/index_page/slides/slide2.webp";
 import slides3 from "../images/index_page/slides/slide3.webp";
 import slides4 from "../images/index_page/slides/slide4.webp";
-import conceptimg from "../images/index_page/top_concept.webp";
+import conceptimg from "../images/index_page/top_concept2.webp";
 import case1 from "../images/index_page/case1.webp";
 import case2 from "../images/index_page/case2.webp";
 import case3 from "../images/index_page/case3.webp";
@@ -18,7 +18,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 
 <IndexLayout>
 	<div class="slideshow">
-		<h1 class="logo">Life In Suburb</h1>
+		<h1 class="logo" style="font-size: 40px;">Life In Suburb</h1>
 		{
 			images.map((src, index) => (
 				<Image
@@ -39,7 +39,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 					<h2>Our Thought</h2>
 				</div>
 				<div>
-					<p>
+					<p style="line-height: 2em;">
 						スタイルやバランスを意識し、素材や質感、製品へのこだわりを強く持つことで、<br
 						/>小さな部分での重なりが全体としての大きな違いを生み出すと考えています。<br
 						/>このような違いがお客様の生活を豊かにできる一助となることが私たちの喜びです。
@@ -47,29 +47,53 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 				</div>
 			</div>
 		</div>
-		<div class="parts concept-part">
-			<div class="concept-part-left fade-in">
-				<Image src={conceptimg} alt="Thoughtimg" loading="eager" />
-			</div>
-			<div class="concept-part-right fade-in">
-				<div class="part_title">
-					<h2>CONCEPT</h2>
+		<div class="not_mobile">
+			<div class="parts concept-part">
+				<div class="image-wrapper">
+					<Image alt="コンセプト画像" src={conceptimg} />
+					<div class="text-overlay">
+						<div class="part_title">
+							<h2>CONCEPT</h2>
+						</div>
+						<p style="line-height: 2em;">
+							自然に囲まれた郊外で、大切な人と心豊かな暮らしを。
+							<br />
+							ゆとりある空間で家族の気配を感じながら、それぞれのペースで過ごすことができる住まいを。
+							<br />
+							心地よさに包まれながらもパーソナルスペースを大切にし、暮らしの中から自由な発想が生まれる環境をご提案。
+							<br />
+							建物は長期優良住宅を基本とし、次世代へ継ぐこともできる安心の住まいをご提供します。
+						</p>
+					</div>
 				</div>
+			</div>
+		</div>
 
-				<p>
-					自然に囲まれた郊外で、大切な人と心豊かな暮らしを。
-					<br />
-					ゆとりある空間で家族の気配を感じながら、それぞれのペースで過ごすことができる住まいを。
-					<br />
-					心地よさに包まれながらもパーソナルスペースを大切にし、暮らしの中から自由な発想が生まれる環境をご提案。
-					<br />
-					建物は長期優良住宅を基本とし、次世代へ継ぐこともできる安心の住まいをご提供します。
-				</p>
+		<div class="mobile">
+			<div class="parts">
+				<div class="fade-in">
+					<Image src={conceptimg} alt="Thoughtimg" loading="eager" />
+				</div>
+				<div class="fade-in">
+					<div class="part_title" style="margin-top: 20px;">
+						<h2>CONCEPT</h2>
+					</div>
 
-				<div class="viewmore">
-					<button onclick="location.href='concept'">
-						VIEW MORE
-					</button>
+					<p style="line-height: 2em; text-align: left; ">
+						自然に囲まれた郊外で、大切な人と心豊かな暮らしを。
+						<br />
+						ゆとりある空間で家族の気配を感じながら、それぞれのペースで過ごすことができる住まいを。
+						<br />
+						心地よさに包まれながらもパーソナルスペースを大切にし、暮らしの中から自由な発想が生まれる環境をご提案。
+						<br />
+						建物は長期優良住宅を基本とし、次世代へ継ぐこともできる安心の住まいをご提供します。
+					</p>
+
+					<div class="viewmore">
+						<button onclick="location.href='concept'">
+							VIEW MORE
+						</button>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -186,12 +210,12 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		}
 		.logo {
 			top: 360px;
+			width: 100%;
 			left: 50%;
 			-ms-transform: translate(-50%, -50%);
 			-webkit-transform: translate(-50%, -50%);
 			transform: translate(-50%, -50%);
 			position: absolute;
-			font-size: 60px;
 			font-weight: 400;
 			color: #fffffff7;
 			opacity: 0;
@@ -202,7 +226,20 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			opacity: 1;
 		}
 
-		@media (max-width: 799px) {
+		.mobile {
+			display: none;
+		}
+
+		@media (max-width: 800px) {
+			.mobile {
+				display: block;
+			}
+			.not_mobile {
+				display: none;
+			}
+		}
+
+		@media (max-width: 800px) {
 			.slideshow {
 				height: 720px;
 			}
@@ -225,7 +262,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			margin-bottom: 6%;
 		}
 		.parts {
-			margin-bottom: 20%;
+			margin-bottom: clamp(40px, 20%, 200px);
 		}
 		.viewmore {
 			text-align: center;
@@ -245,17 +282,37 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		}
 
 		/*Concept*/
-		.concept-part {
+		.image-wrapper {
 			position: relative;
-			display: grid;
-			grid-template-columns: 1.5fr 1fr;
+			margin: 0 auto;
+			max-width: 900px;
 		}
-		.concept-part p {
-			margin-left: 8%;
-			text-align: left;
+
+		.image-wrapper img {
+			display: block;
+			width: 100%;
+			height: auto;
+			filter: brightness(65%); /* 画像を暗くする */
 		}
-		.concept-part-right p {
-			margin-bottom: 5%;
+
+		.text-overlay {
+			position: absolute;
+			bottom: 5%;
+			left: 5%;
+			color: rgba(255, 255, 255, 0.891);
+			padding: 1em;
+
+			.part_title {
+				margin-bottom: 3%;
+			}
+			h2 {
+				text-align: left;
+				font-size: 30px;
+			}
+
+			p {
+				text-align: left;
+			}
 		}
 
 		/*WORKS*/
@@ -344,32 +401,36 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 			opacity: 1;
 		}
 
-		@media (min-width: 800px) and (max-width: 1040px) {
+		@media (min-width: 801px) and (max-width: 1040px) {
 			p {
 				font-size: 16px;
 			}
+			.text-overlay {
+				position: absolute;
+				bottom: 3%;
+				left: 3%;
+			}
 		}
-		@media (max-width: 799px) {
+		@media (max-width: 800px) {
 			h2 {
 				font-size: 30px;
 			}
-			p {
-				font-size: 16px;
+
+			.image-text-container {
+				flex-direction: column; /* 縦並びにする */
 			}
-			.concept-part {
-				grid-template-columns: 1fr;
-				grid-template-areas:
-					"right"
-					"left";
+
+			.responsive-img,
+			.text-overlay {
+				width: 100%; /* 全幅にする */
 			}
-			.concept-part-right {
-				margin-top: 10%;
+
+			.text-overlay {
+				text-align: left;
+				bottom: 3%;
+				left: 3%;
 			}
-			.concept-part-right p {
-				font-size: 15px;
-				margin: 0 0 20px;
-				text-align: center;
-			}
+
 			.thought_container_a {
 				display: grid;
 				grid-template-columns: 1fr;

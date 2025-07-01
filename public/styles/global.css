@@ -18,11 +18,13 @@ html {
 
 h1 {
 	font-size: 20px;
+	letter-spacing: 0.03em;
 	text-align: center;
 }
 
 h2 {
 	font-size: 40px;
+	letter-spacing: 0.05em;
 	text-align: center;
 }
 
@@ -69,7 +71,11 @@ img {
 	margin: 0 auto;
 }
 
-@media (max-width: 799px) {
+@media (max-width: 800px) {
+	p {
+		font-size: 13px;
+	}
+
 	.title {
 		height: 480px;
 		margin-bottom: 60px;
@@ -81,9 +87,11 @@ img {
 		font-size: 40px;
 	}
 
+
+
 	.content-part {
 		width: 100%;
-		padding: 10%;
+		padding: 5%;
 	}
 }
 
@@ -109,6 +117,7 @@ img {
 
 .container h2 {
 	text-align: left;
+
 	font-size: 14px;
 	font-weight: 300;
 }
