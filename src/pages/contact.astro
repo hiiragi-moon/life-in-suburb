@@ -8,6 +8,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
     <div class="slim-content-part">
+        <div class="form">
+
+        
         <div class="formtitle">
             <h1>Contact Form</h1>
         </div>
@@ -123,6 +126,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
         <div id="notification"></div>
     </div>
+    </div>
 
     <hr />
 
@@ -162,7 +166,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             width: 100%;
         }
         .list-box textarea {
-            padding: 30px;
+            padding: 10px 10px 50px;
             border: 1px solid #000000;
             margin-bottom: 4%;
             width: 100%;
@@ -213,6 +217,21 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         .button_area button:hover {
             color: #ffffff;
             background-color: #000000;
+        }
+        @media (max-width: 799px) {
+            .list-box input,
+            .list-box select {
+                padding: 4px;
+                border: 1px solid #000000;
+                margin-bottom: 4%;
+                width: 100%;
+            }
+            .phone-split input {
+            width: 50px;
+            }
+            .postal-code-split input {
+                width: 60px;
+            }
         }
     </style>
 </BaseLayout>
