@@ -1,0 +1,8 @@
+# ビルド成果物
+dist/
+
+# Astroの一時ファイル
+.astro/
+
+# npmの依存ファイル
+node_modules/
