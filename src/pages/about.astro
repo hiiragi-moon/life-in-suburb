@@ -9,7 +9,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </div>
 
         <div class="about_title">
-            <h1>Company Profile</h1>
+            <h2>Company Profile</h2>
         </div>
 
         <table class="about_list">
@@ -46,13 +46,13 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         </table>
 
         <div class="about_title">
-            <h1>Office</h1>
+            <h2>Office</h2>
         </div>
 
         <div class="office">
             <div class="office_item">
-                <h1>Life In Suburb</h1>
-                <p>〒427-0104 静岡県島田市井口1421</p>
+                <h3>Life In Suburb</h3>
+                <p>〒427-0104<br />静岡県島田市井口1421</p>
                 <p>open：9:00～17:00</p>
                 <p>close：sunday（第1日曜日は営業）</p>
                 <div class="map_button">
@@ -75,20 +75,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 <style>
     /* ABOUT */
     .about h1 {
-        margin-bottom: 5%;
         font-size: 40px;
     }
 
-    .about_title h1 {
+    .about_title h2 {
         text-align: left;
         font-size: 30px;
         font-weight: bold;
-        margin-top: 10%;
-        margin-bottom: 8%;
-    }
-
-    .about_list {
-        padding-bottom: 5%;
+        margin-top: 60px;
+        margin-bottom: 30px;
     }
 
     .about_list tr {
@@ -97,9 +92,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
     .about_list th,
     td {
-        font-size: 20px;
-        font-weight: 300;
+        font-size: 16px;
         padding-bottom: 10%;
+    }
+    .about_list th {
+        font-size: 18px;
     }
 
     .about_list td {
@@ -117,10 +114,11 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         text-align: center;
     }
 
-    .office_item h1 {
+    .office_item h3 {
         font-size: 24px;
+        font-weight: 500;
         text-align: left;
-        padding-bottom: 10%;
+        padding-bottom: 1rem;
     }
 
     .office_item p {
@@ -149,13 +147,6 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         opacity: 1;
     }
     @media (max-width: 799px) {
-        .slim-content-part {
-            width: 100%;
-            padding: 10%;
-            padding-top: 20%;
-            padding-bottom: 20%;
-        }
-
         .about_title h1 {
             font-size: 26px;
             font-weight: bold;

@@ -4,128 +4,139 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 
 <BaseLayout>
     <div class="title contact">
-        <p>CONTACT</p>
+        <h1>CONTACT</h1>
     </div>
 
     <div class="slim-content-part">
         <div class="form">
+            <div class="formtitle">
+                <h2>Contact Form</h2>
+            </div>
 
-        
-        <div class="formtitle">
-            <h1>Contact Form</h1>
-        </div>
-
-        <form action="https://ssgform.com/s/CM4lOJZXjPJ0" method="post">
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="name" class="required">お名前</label>
-                </div>
-                <div class="list-box">
-                    <input type="text" id="name" name="name" required />
-                </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="furigana" class="required">フリガナ</label>
-                </div>
-                <div class="list-box">
-                    <input type="text" id="furigana" name="furigana" required />
-                </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="company"
-                        >会社名 (法人様の場合はご記入ください)</label
-                    >
-                </div>
-                <div class="list-box">
-                    <input type="text" id="company" name="company" />
-                </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="email" class="required">メールアドレス</label>
-                </div>
-                <div class="list-box">
-                    <input type="email" id="email" name="email" required />
-                </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="phone1" class="required">電話番号</label>
-                </div>
-                <div class="list-box">
-                    <div class="phone-split">
-                        <input id="phone1" name="phone1" required />ー
-                        <input id="phone2" name="phone2" required />ー
-                        <input id="phone3" name="phone3" required />
+            <form action="https://ssgform.com/s/CM4lOJZXjPJ0" method="post">
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="name" class="required">お名前</label>
+                    </div>
+                    <div class="list-box">
+                        <input type="text" id="name" name="name" required />
                     </div>
                 </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="postal_code1" class="required">郵便番号</label>
-                </div>
-                <div class="list-box">
-                    <div class="postal-code-split">
-                        〒<input
-                            type="text"
-                            id="postal_code1"
-                            name="postal_code1"
-                            required
-                        />ー
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="furigana" class="required">フリガナ</label>
+                    </div>
+                    <div class="list-box">
                         <input
                             type="text"
-                            id="postal_code2"
-                            name="postal_code2"
+                            id="furigana"
+                            name="furigana"
                             required
                         />
                     </div>
                 </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="address" class="required">住所</label>
-                </div>
-                <div class="list-box">
-                    <input type="text" id="address" name="address" />
-                </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="inquiry_type" class="required"
-                        >お問い合わせ種別</label
-                    >
-                </div>
-                <div class="list-box">
-                    <select id="inquiry_type" name="inquiry_type" required>
-                        <option value="">選択してください</option>
-                        <option value="住宅新築">住宅新築</option>
-                        <option value="住宅リフォーム">住宅リフォーム</option>
-                        <option value="店舗新築">店舗新築</option>
-                        <option value="店舗リフォーム">店舗リフォーム</option>
-                        <option value="その他問い合わせ"
-                            >その他問い合わせ</option
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="company"
+                            >会社名 (法人様の場合はご記入ください)</label
                         >
-                    </select>
+                    </div>
+                    <div class="list-box">
+                        <input type="text" id="company" name="company" />
+                    </div>
                 </div>
-            </div>
-            <div class="list-group">
-                <div class="list-name">
-                    <label for="message">お問い合わせ内容</label>
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="email" class="required"
+                            >メールアドレス</label
+                        >
+                    </div>
+                    <div class="list-box">
+                        <input type="email" id="email" name="email" required />
+                    </div>
                 </div>
-                <div class="list-box">
-                    <textarea class="message" name="message"></textarea>
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="phone1" class="required">電話番号</label>
+                    </div>
+                    <div class="list-box">
+                        <div class="phone-split">
+                            <input id="phone1" name="phone1" required />ー
+                            <input id="phone2" name="phone2" required />ー
+                            <input id="phone3" name="phone3" required />
+                        </div>
+                    </div>
                 </div>
-            </div>
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="postal_code1" class="required"
+                            >郵便番号</label
+                        >
+                    </div>
+                    <div class="list-box">
+                        <div class="postal-code-split">
+                            〒<input
+                                type="text"
+                                id="postal_code1"
+                                name="postal_code1"
+                                required
+                            />ー
+                            <input
+                                type="text"
+                                id="postal_code2"
+                                name="postal_code2"
+                                required
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="address" class="required">住所</label>
+                    </div>
+                    <div class="list-box">
+                        <input type="text" id="address" name="address" />
+                    </div>
+                </div>
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="inquiry_type" class="required"
+                            >お問い合わせ種別</label
+                        >
+                    </div>
+                    <div class="list-box">
+                        <select id="inquiry_type" name="inquiry_type" required>
+                            <option value="">選択してください</option>
+                            <option value="住宅新築">住宅新築</option>
+                            <option value="住宅リフォーム"
+                                >住宅リフォーム</option
+                            >
+                            <option value="店舗新築">店舗新築</option>
+                            <option value="店舗リフォーム"
+                                >店舗リフォーム</option
+                            >
+                            <option value="その他問い合わせ"
+                                >その他問い合わせ</option
+                            >
+                        </select>
+                    </div>
+                </div>
+                <div class="list-group">
+                    <div class="list-name">
+                        <label for="message">お問い合わせ内容</label>
+                    </div>
+                    <div class="list-box">
+                        <textarea class="message" name="message"></textarea>
+                    </div>
+                </div>
 
-            <div class="button_area">
-                <button type="submit">確定</button>
-            </div>
-        </form>
+                <div class="button_area">
+                    <button type="submit">確定</button>
+                </div>
+            </form>
 
-        <div id="notification"></div>
-    </div>
+            <div id="notification"></div>
+        </div>
     </div>
 
     <hr />
@@ -147,7 +158,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             background-position: center;
             overflow: hidden;
         }
-        .formtitle h1 {
+        .formtitle h2 {
             font-size: 30px;
             margin-bottom: 30px;
         }
@@ -162,8 +173,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         .list-box select {
             padding: 7px;
             border: 1px solid #000000;
-            margin-bottom: 4%;
+            margin-bottom: 40px;
             width: 100%;
+            font-weight: 300;
         }
         .list-box textarea {
             padding: 10px 10px 50px;
@@ -223,15 +235,23 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             .list-box select {
                 padding: 4px;
                 border: 1px solid #000000;
-                margin-bottom: 4%;
+                margin-bottom: 30px;
                 width: 100%;
             }
+
             .phone-split input {
-            width: 50px;
+                width: 50px;
             }
             .postal-code-split input {
                 width: 60px;
             }
+        }
+        label,
+        select {
+            font-weight: 300;
+        }
+        select {
+            font-size: 14px;
         }
     </style>
 </BaseLayout>

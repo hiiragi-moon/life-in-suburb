@@ -6,7 +6,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 
 <BaseLayout>
     <div class="title blog">
-        <p>BLOG</p>
+        <h1>BLOG</h1>
     </div>
     <div class="content-part">
         <div class="container fadein">
@@ -39,8 +39,6 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
         overflow: hidden;
     }
     .container {
-        margin-left: 5%;
-        margin-right: 5%;
         gap: 40px;
     }
 
