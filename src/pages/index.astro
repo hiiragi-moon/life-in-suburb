@@ -18,7 +18,7 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 
 <IndexLayout>
 	<div class="slideshow">
-		<h1 class="logo" style="font-size: 40px;">Life In Suburb</h1>
+		<h1 class="logo" style="font-size: 42px;">Life In Suburb</h1>
 		{
 			images.map((src, index) => (
 				<Image
@@ -282,37 +282,46 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
 		}
 
 		/*Concept*/
-		.image-wrapper {
+
+		/* 概念セクション hover エフェクト */
+		.parts.concept-part .image-wrapper {
 			position: relative;
-			margin: 0 auto;
-			max-width: 900px;
+			width: 100%;
+			overflow: hidden;
 		}
 
-		.image-wrapper img {
-			display: block;
+		.parts.concept-part .image-wrapper img {
 			width: 100%;
 			height: auto;
-			filter: brightness(65%); /* 画像を暗くする */
+			object-fit: cover;
+			transition: filter 0.5s ease;
 		}
 
-		.text-overlay {
+		.parts.concept-part .image-wrapper:hover img {
+			filter: brightness(40%);
+		}
+
+		.parts.concept-part .text-overlay {
 			position: absolute;
-			bottom: 5%;
-			left: 5%;
-			color: rgba(255, 255, 255, 0.891);
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			color: white;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
 			padding: 1em;
+			text-align: center;
+			pointer-events: none; /* クリック不可 */
+			transition: opacity 0.5s ease;
+			opacity: 0;
+		}
 
-			.part_title {
-				margin-bottom: 3%;
-			}
-			h2 {
-				text-align: left;
-				font-size: 30px;
-			}
-
-			p {
-				text-align: left;
-			}
+		.parts.concept-part .image-wrapper:hover .text-overlay {
+			opacity: 1;
+			pointer-events: auto;
 		}
 
 		/*WORKS*/

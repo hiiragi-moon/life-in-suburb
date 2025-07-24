@@ -14,7 +14,7 @@ const { title, description } = Astro.props;
     <meta property="og:image" content="/images/index_page/slides/slide1.webp" />
     <meta property="og:type" content="website" />
 
-    <title>{title} | Life In Suburb</title>
+    <title>{title ? `${title} | Life In Suburb` : "Life In Suburb"}</title>
     <meta name="description" content={description} />
 
     <!-- CSS -->
