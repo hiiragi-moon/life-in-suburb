@@ -4,9 +4,9 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const posts = await Astro.glob("../pages/post/*.md"); // returns an array of posts that live at ./src/pages/post/*.md
 ---
 
-<BaseLayout>
+<BaseLayout title="BLOG">
     <div class="title blog">
-        <p>BLOG</p>
+        <h1>BLOG</h1>
     </div>
     <div class="content-part">
         <div class="container fadein">
@@ -39,15 +39,12 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
         overflow: hidden;
     }
     .container {
-        margin-left: 5%;
-        margin-right: 5%;
         gap: 40px;
     }
 
     @media (max-width: 799px) {
         .container {
             grid-template-columns: repeat(2, 1fr);
-            margin: 0;
         }
     }
 </style>

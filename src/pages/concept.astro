@@ -2,24 +2,24 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 ---
 
-<BaseLayout>
+<BaseLayout  title="CONCEPT">
     <div class="concept_title title">
-        <p>CONCEPT</p>
+        <h1>CONCEPT</h1>
     </div>
 
     <div class="content-part">
         <div class="concept">
-            <h1 class="headline desktop">
-                【Life In Suburbs】 郊外での豊かな暮らし。
-            </h1>
-            <h1 class="headline mobile">Life In Suburbs</h1>
-            <p>
+            <h2 class="headline desktop">
+                【Life In Suburb】 郊外での豊かな暮らし。
+            </h2>
+            <h2 class="headline mobile">Life In Suburb</h2>
+            <p class="headline-detail">
                 郊外での豊かな暮らしをテーマに、
                 家族の成長とともに柔軟性が高く多様性のあるライフスタイルを提案します。
             </p>
 
             <div class="theme">
-                <h1>Design Concept</h1>
+                <h2>Design Concept</h2>
             </div>
 
             <div class="DC_container">
@@ -30,7 +30,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         loading="lazy"
                     />
                     <div>
-                        <h1>01. ゆとりある生活は余白のあるデザインから。</h1>
+                        <h3>01. ゆとりある生活は余白のあるデザインから。</h3>
 
                         <p>
                             外観、内装ともに、何もないシンプルな壁面を残すことを意識。シンプルなキューブ型の建物には、シンボルツリーの緑が映えます。内装は間仕切りの壁や建具を極力減らし、空間をいかに美しく見せるかにこだわっています。
@@ -44,9 +44,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         loading="lazy"
                     />
                     <div>
-                        <h1>
-                            02. シンプルな中に本物の素材が映える質の高い空間。
-                        </h1>
+                        <h3>02. シンプルな中に本物の素材が映える空間。</h3>
 
                         <p>
                             シンプルなつくりであるからこそ、使われている素材が上質であると圧倒的に違いが光ります。フローリングは無垢挽板を使うことで本物の木の質感をたっぷりと感じられます。経年変化や使用感も本物だからこそお楽しみいただけます。
@@ -60,7 +58,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         loading="lazy"
                     />
                     <div>
-                        <h1>03. 職人の丁寧な仕上げから感じられるぬくもり。</h1>
+                        <h3>03. 職人の丁寧な仕上げから感じるぬくもり。</h3>
 
                         <p>
                             白い壁をベースにして、リビングのTV面、キッチンの腰壁などに表情の変化が出るモールテックスを。職人が施す左官仕上げの壁の陰影からは、既製品とは違うあたたかさと落ち着きを感じます。
@@ -75,7 +73,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         loading="lazy"
                     />
                     <div>
-                        <h1>04. 使いやすく美しい壁面収納。</h1>
+                        <h3>04. 使いやすく美しい壁面収納。</h3>
 
                         <p>
                             必要な場所に必要な大きさの収納があれば、自然と部屋は片付きます。単に大きな収納があるより暮らしの導線を考え、限られたスペースを有効活用し、なおかつ美しく収納できる使い方をご提案します。
@@ -90,7 +88,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         loading="lazy"
                     />
                     <div>
-                        <h1>05. スタイルに合わせた照明器具。</h1>
+                        <h3>05. スタイルに合わせた照明器具。</h3>
 
                         <p>
                             空間に深みを持たせてくれる照明器具は、ご家族の個性やインテリアスタイルに合わせてセレクトしています。オリジナルのトグルスイッチやスイッチプレートなど、細部にこそこだわりを。
@@ -105,7 +103,7 @@ import BaseLayout from "../layouts/BaseLayout.astro";
                         loading="lazy"
                     />
                     <div>
-                        <h1>06. デザインと性能、どちらにもこだわりを。</h1>
+                        <h3>06. デザインと性能、どちらにもこだわりを。</h3>
 
                         <p>
                             便利な機能や設備にはリモコンがつきもの。無機質なプラスチック製品が表に出てくるとせっかくのデザインに生活感が。そこで、上手にフォローするニッチ収納を。細かな部分ですが、大切にしたい要素です。
@@ -126,56 +124,48 @@ import BaseLayout from "../layouts/BaseLayout.astro";
         background-position: center;
         overflow: hidden;
     }
-    .concept {
-        margin-top: 3%;
-        margin-bottom: 20%;
-    }
-    .concept h1 {
+
+    .theme h2 {
         text-align: center;
-        font-weight: bold;
-        font-size: 30px;
-    }
-    .concept p {
-        text-align: center;
-        font-size: 20px;
-        margin-top: 3%;
-    }
-    .theme h1 {
-        text-align: center;
-        margin-top: 14%;
-        margin-bottom: 5%;
-        font-weight: bold;
-        font-size: 35px;
+        margin-top: 100px;
+        margin-bottom: 40px;
+        font-size: 32px;
     }
     .DC_container_items {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
-    .DC_container_items h1 {
+    .DC_container_items h3 {
         text-align: left;
-        margin-left: 5%;
-        margin-bottom: 5%;
+        margin-left: 30px;
+        margin-bottom: 30px;
         font-size: 24px;
     }
     .DC_container_items img {
-        margin-bottom: 20%;
+        margin-bottom: 80px;
     }
     .DC_container_items p {
-        margin-left: 5%;
+        margin-left: 30px;
         text-align: left;
-        margin-bottom: 10%;
+    }
+    .headline {
+        font-size: 24px;
+    }
+    .headline-detail {
+        margin-top: 20px;
         font-size: 18px;
     }
+
     .headline.mobile {
         display: none;
     }
-    @media (max-width: 799px) {
+    @media (max-width: 860px) {
         .concept h1 {
             font-size: 24px;
         }
         .concept p {
             font-size: 16px;
-            margin-bottom: 30%;
+            margin-bottom: 30px;
         }
         .headline.desktop {
             display: none;
@@ -187,15 +177,15 @@ import BaseLayout from "../layouts/BaseLayout.astro";
             grid-template-columns: 1fr;
         }
         .DC_container_items img {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
-        .DC_container_items h1 {
-            margin-left: 0%;
+        .DC_container_items h3 {
+            margin-left: 0;
             font-size: 18px;
-            margin-bottom: 0%;
+            margin-bottom: 0;
         }
         .DC_container_items p {
-            margin: 10px 0 15% 18px;
+            margin: 10px 0 40px;
             font-size: 16px;
         }
     }

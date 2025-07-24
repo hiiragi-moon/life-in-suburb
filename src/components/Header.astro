@@ -5,7 +5,9 @@
 <!-- Header -->
 <header class="page-header index-fadein">
 	<div>
-		<h1 class="header_items"><a href="/index.html">Life In Suburb</a></h1>
+		<a href="/" class="header_items" style="font-size: 18px;"
+			>Life In Suburb</a
+		>
 	</div>
 	<div>
 		<ul class="items_list">
@@ -61,7 +63,7 @@
 		position: fixed;
 		height: 60px;
 		width: 100%;
-		padding: 10px 3%; /* 上下10px、左右5%の余白 */
+		padding: 10px 3%;
 		background: rgba(255, 253, 253, 0.7);
 		display: flex;
 		justify-content: space-between;
@@ -73,7 +75,7 @@
 
 	.header_items {
 		box-sizing: border-box;
-		margin: 0; /* 不要な余白をリセット */
+		margin: 0;
 	}
 
 	.items_list {
@@ -81,7 +83,7 @@
 		display: flex;
 		align-items: center;
 		list-style: none;
-		gap: 1rem;
+		gap: 1.3rem;
 	}
 
 	.items_list li {
@@ -89,26 +91,26 @@
 		align-items: center;
 	}
 
-	.youtube {
-		width: 2rem;
-		margin-right: 0.5rem; /* Instagramアイコンとの間に余白 */
+	.youtube,
+	.instagram {
+		height: 2rem;
+		width: auto;
+		display: block;
+		object-fit: contain;
 	}
 
 	.instagram {
-		width: 1.5rem;
-		margin-right: 0.5rem; /* CONTACTリンクとの間に余白 */
+		height: 1.5rem;
 	}
 
 	.btn-trigger {
 		cursor: pointer;
-		margin-left: 0.5rem; /* リストの最後に少し余白を追加 */
 	}
 
 	.menu-panel ul {
 		list-style: none;
 	}
 
-	/* Menu Panel */
 	.menu-panel {
 		position: fixed;
 		top: 60px;

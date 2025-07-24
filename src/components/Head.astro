@@ -1,3 +1,7 @@
+---
+const { title, description } = Astro.props;
+---
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,8 +13,9 @@
     <meta property="og:description" content="Life In Suburb" />
     <meta property="og:image" content="/images/index_page/slides/slide1.webp" />
     <meta property="og:type" content="website" />
-    <title>Life In Suburb</title>
-    <meta name="description" content="Life In Suburb" />
+
+    <title>{title ? `${title} | Life In Suburb` : "Life In Suburb"}</title>
+    <meta name="description" content={description} />
 
     <!-- CSS -->
     <link rel="stylesheet" href="https://unpkg.com/ress/dist/ress.min.css" />
