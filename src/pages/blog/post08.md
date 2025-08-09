@@ -4,7 +4,7 @@ title: "8. 洗面ユーティリティ"
 date: "2024.11.2"
 image: "/images/article_images/article08/01.webp"
 category: "first"
-url: "/post/post08"
+url: "/blog/post08"
 ---
 
 洗面ユーティリティスペースもスケルトン状態です。

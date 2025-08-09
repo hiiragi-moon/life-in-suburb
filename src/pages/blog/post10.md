@@ -5,7 +5,7 @@ date: "2024.11.16"
 image: "/images/article_images/article10/01.webp"
 description: "post10"
 category: "first"
-url: "/post/post10"
+url: "/blog/post10"
 ---
 
 窓の設置が終わりました。

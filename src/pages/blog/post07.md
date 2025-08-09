@@ -4,7 +4,7 @@ title: "7. リビングダイニング"
 date: "2024.10.26"
 image: "/images/article_images/article07/01.webp"
 category: "first"
-url: "/post/post07"
+url: "/blog/post07"
 ---
 
 リビングダイニングの天井には合板を貼って下地とします。

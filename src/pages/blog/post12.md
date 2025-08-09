@@ -5,7 +5,7 @@ date: "2024.11.30"
 image: "/images/article_images/article12/01.webp"
 description: "post12"
 category: "first"
-url: "/post/post12"
+url: "/blog/post12"
 ---
 
 小屋裏・中二階スペースです。階段がまだですが、設置予定です。

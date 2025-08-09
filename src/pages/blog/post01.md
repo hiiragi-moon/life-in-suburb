@@ -4,7 +4,7 @@ title: "1. 始まります。"
 date: "2024.9.11"
 image: "/images/article_images/article01/01.webp"
 category: "first"
-url: "/post/post01"
+url: "/blog/post01"
 ---
 
 浜松市など静岡県西部を中心に建設業を営業し18年。

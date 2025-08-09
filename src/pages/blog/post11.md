@@ -5,7 +5,7 @@ date: "2024.11.23"
 image: "/images/article_images/article11/01.webp"
 description: "post11"
 category: "first"
-url: "/post/post11"
+url: "/blog/post11"
 ---
 
 オーク材のフローリングが張り終わりました。
