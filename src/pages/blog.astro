@@ -1,7 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const posts = await Astro.glob("../pages/post/*.md"); // returns an array of posts that live at ./src/pages/post/*.md
+const blogs = await Astro.glob("../pages/blog/*.md"); // returns an array of blogs that live at ./src/pages/blog/*.md
 ---
 
 <BaseLayout title="BLOG">
@@ -11,18 +11,18 @@ const posts = await Astro.glob("../pages/post/*.md"); // returns an array of pos
     <div class="content-part">
         <div class="container fadein">
             {
-                posts
+                blogs
                     .reverse()
                     .slice(0, 50)
-                    .map((post) => (
-                        <a href={post.frontmatter.url}>
+                    .map((blog) => (
+                        <a href={blog.frontmatter.url}>
                             <img
-                                src={post.frontmatter.image}
-                                alt={post.frontmatter.description}
+                                src={blog.frontmatter.image}
+                                alt={blog.frontmatter.description}
                                 loading="lazy"
                             />
-                            <h2>{post.frontmatter.date}</h2>
-                            <h1>{post.frontmatter.title}</h1>
+                            <h2>{blog.frontmatter.date}</h2>
+                            <h1>{blog.frontmatter.title}</h1>
                         </a>
                     ))
             }
