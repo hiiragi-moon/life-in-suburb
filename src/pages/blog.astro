@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
-
+import { getBlogs } from "../library/microcms";
+const response = await getBlogs({ fields: ["id", "title"] });
 const blogs = await Astro.glob("../pages/blog/*.md"); // returns an array of blogs that live at ./src/pages/blog/*.md
 ---
 
